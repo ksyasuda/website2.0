@@ -1,0 +1,159 @@
+.link {
+	text-decoration: none;
+	color: rgba(192, 97, 19, 0.945);
+	font-weight: bold;
+	font-size: x-large;
+	width: 80%;
+}
+
+.link:hover,
+.postContainer:hover {
+	background-color: green;
+	color: green;
+}
+
+.Subject {
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.651);
+}
+
+.blog_container {
+	background-color: blue;
+	width: 100%;
+	height: 100%;
+}
+
+.Title,
+.Body {
+	color: black;
+}
+
+.Title {
+	font-size: xx-large;
+	position: relative;
+	top: 7px;
+	left: 5px;
+	/* text-decoration: underline; */
+}
+
+.Body {
+	font-size: large;
+	font-weight: 100;
+	margin-top: -15px;
+	position: relative;
+	left: 5px;
+	top: 8px;
+}
+
+.postContainer {
+	border: 1px solid black;
+	margin: 20px 0px 10px 0px;
+	box-sizing: border-box;
+	padding: 10px 10px 0px 10px;
+	border-radius: 22px;
+	margin-bottom: 3%;
+	width: 80%;
+	position: relative;
+	left: 10%;
+}
+
+.Line {
+	margin-top: 15px;
+}
+
+.travel {
+	height: 100%;
+	position: relative;
+	z-index: 100;
+	/* top: -30px; */
+}
+
+.content {
+	position: absolute;
+	z-index: 100;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 15%;
+	/* -ms-overflow-style: none; */
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+.button {
+	width: 100%;
+	color: rgba(192, 97, 19, 0.945);
+	background-color: rebeccapurple;
+	letter-spacing: 1px;
+	font-weight: 500;
+	border: 1px solid black;
+}
+
+.button:hover {
+	color: green;
+}
+
+.button:active {
+	color: dodgerblue;
+}
+
+.navbar {
+	position: relative;
+	background-color: rgb(40, 44, 52);
+	height: 80px;
+	top: -18px;
+}
+
+.gohome {
+	position: relative;
+	background-color: rgb(40, 44, 52);
+	top: 94px;
+	text-align: left;
+	border: none;
+	color: green;
+}
+
+.gohome:hover {
+	color: yellow;
+}
+
+.gohome:active {
+	color: dodgerblue;
+}
+
+.numPosts {
+	position: relative;
+	top: -10px;
+}
+
+@media (max-width: 500px) {
+	.link,
+	.postContainer {
+		width: 98%;
+		left: 1%;
+	}
+}
+
+.BlogPosts {
+	display: inline-block;
+	color: #8bbee8ff;
+	font-weight: bold;
+}
+
+.Links {
+	text-decoration: none;
+	color: dodgerblue;
+}
+
+.Links:hover {
+	color: green;
+}
+
+.Breadcrumbs {
+	padding: 10px;
+	position: relative;
+	top: 15px;
+	left: 8px;
+}

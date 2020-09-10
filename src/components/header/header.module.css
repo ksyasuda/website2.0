@@ -1,0 +1,22 @@
+.SiteTitle {
+	float: left;
+	margin: 0;
+	position: relative;
+	top: -1px;
+}
+
+/*
+@media (max-width: 800px) {
+	.SiteTitle {
+		position: relative;
+		left: 2%;
+		top: 2%;
+	}
+}
+*/
+
+.Spinner {
+	display: flex;
+	position: relative;
+	background-color: black;
+}
