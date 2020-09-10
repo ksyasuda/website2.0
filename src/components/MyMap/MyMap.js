@@ -228,7 +228,8 @@ class MyMap extends Component {
 			</Popup>
 		)
 		this.setState({ loading: loading })
-		const response = await axios.post("/api", data)
+		let post_url = 'https://sudacode-travelapi.herokuapp.com/api'
+		const response = await axios.post(post_url, data)
 		console.log(response)
 		this.clearState()
 		let success = this.state.success

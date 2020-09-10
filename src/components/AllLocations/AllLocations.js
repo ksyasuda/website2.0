@@ -4,12 +4,12 @@ import axios from "axios"
 // import Button from '../../components/UI/Button/Button';
 import Button from "@material-ui/core/Button"
 import classes from "./AllLocations.module.css"
-import { Redirect } from "react-router-dom"
 import Spinner from "../../components/UI/Spinner/Spinner"
 import Name from "../../components/Name/Name"
 import Dates from "../../components/Dates/Dates"
 import Loc from "../../components/Loc/Loc"
 import Location from "../Location/Location"
+import {navigate} from "gatsby"
 
 const { Map: LeafletMap, TileLayer, Marker, Popup, FeatureGroup } = ReactLeaflet
 
@@ -22,7 +22,6 @@ class AllLocations extends Component {
 		markerGroup: [],
 		weather: null,
 		popup: false,
-		redirect: false,
 		nodes: [],
 		loading: null,
 		spinner: false,
@@ -219,11 +218,12 @@ class AllLocations extends Component {
 
 	onRemoveDataHandler = async () => {
 		if (this.state.markers.length < 1) return
-		const response = await axios.post("/remove-all", {})
+		const response = await axios.post("https://sudacode-travelapi.herokuapp.com/remove-all", {})
 		console.log(response)
 		// document.location.reload();
 		// console.log(this.state.redirect)
-		this.setState({ redirect: true })
+		// this.setState({ redirect: true })
+		navigate('/')
 	}
 
 	onRemoveEltHandler = async () => {
@@ -233,11 +233,12 @@ class AllLocations extends Component {
 		// console.log('num', num);
 		// console.log(stuff.value);
 		const data = { entryNum: num }
-		const response = await axios.post(`/remove-elt`, data)
+		const response = await axios.post(`https://sudacode-travelapi.herokuapp.com/remove-elt`, data)
 		console.log(response)
 		// this.props.history.push('/');
 		// document.location.reload(true);
-		this.setState({ redirect: true })
+		// this.setState({ redirect: true })
+		navigate('/')
 	}
 
 	render() {
@@ -247,7 +248,6 @@ class AllLocations extends Component {
 		return (
 			<div id='map-container'>
 				<h2>All Locations</h2>
-				{this.state.redirect ? <Redirect to='/' exact /> : null}
 				{typeof window !== "undefined" ? (
 					<LeafletMap
 						id='map'
