@@ -11,7 +11,7 @@ import Loc from "../../components/Loc/Loc"
 import Location from "../Location/Location"
 import { navigate } from "gatsby"
 
-const { Map: LeafletMap, TileLayer, Popup } = ReactLeaflet
+const { Map: LeafletMap, TileLayer, Popup, Marker } = ReactLeaflet
 
 class AllLocations extends Component {
 	state = {
