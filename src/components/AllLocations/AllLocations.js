@@ -9,9 +9,9 @@ import Name from "../../components/Name/Name"
 import Dates from "../../components/Dates/Dates"
 import Loc from "../../components/Loc/Loc"
 import Location from "../Location/Location"
-import {navigate} from "gatsby"
+import { navigate } from "gatsby"
 
-const { Map: LeafletMap, TileLayer, Marker, Popup, FeatureGroup } = ReactLeaflet
+const { Map: LeafletMap, TileLayer, Popup } = ReactLeaflet
 
 class AllLocations extends Component {
 	state = {
@@ -218,12 +218,15 @@ class AllLocations extends Component {
 
 	onRemoveDataHandler = async () => {
 		if (this.state.markers.length < 1) return
-		const response = await axios.post("https://sudacode-travelapi.herokuapp.com/remove-all", {})
+		const response = await axios.post(
+			"https://sudacode-travelapi.herokuapp.com/remove-all",
+			{}
+		)
 		console.log(response)
 		// document.location.reload();
 		// console.log(this.state.redirect)
 		// this.setState({ redirect: true })
-		navigate('/')
+		navigate("/")
 	}
 
 	onRemoveEltHandler = async () => {
@@ -233,12 +236,15 @@ class AllLocations extends Component {
 		// console.log('num', num);
 		// console.log(stuff.value);
 		const data = { entryNum: num }
-		const response = await axios.post(`https://sudacode-travelapi.herokuapp.com/remove-elt`, data)
+		const response = await axios.post(
+			`https://sudacode-travelapi.herokuapp.com/remove-elt`,
+			data
+		)
 		console.log(response)
 		// this.props.history.push('/');
 		// document.location.reload(true);
 		// this.setState({ redirect: true })
-		navigate('/')
+		navigate("/")
 	}
 
 	render() {

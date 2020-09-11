@@ -6,6 +6,14 @@
 	width: 80%;
 }
 
+.homelink {
+	text-decoration: none;
+	color: rgba(192, 97, 19, 0.945);
+	font-weight: bold;
+	font-size: x-large;
+	width: 20%;
+}
+
 .link:hover,
 .postContainer:hover {
 	background-color: green;
@@ -55,6 +63,18 @@
 	width: 80%;
 	position: relative;
 	left: 10%;
+}
+
+.postContainerHome {
+	border: 1px solid black;
+	margin: 20px 0px 10px 0px;
+	box-sizing: border-box;
+	padding: 10px 10px 0px 10px;
+	border-radius: 22px;
+	margin-bottom: 3%;
+	width: 40%;
+	position: relative;
+	left: 30%;
 }
 
 .Line {
@@ -163,10 +183,13 @@
 	background-repeat: no-repeat;
 	height: 200vh;
 	position: relative;
-	background-position-y: 73%;
+	top: -26px;
+	left: -20px;
 	/* top: -26px;
 	left: -20px; */
-	width: 100%;
+	width: 103.2%;
+	height: 200vh;
+	z-index: 100;
 }
 
 .ContentContainer {
