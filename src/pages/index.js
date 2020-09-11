@@ -29,12 +29,12 @@ class IndexPage extends Component {
 						style={{
 							backgroundColor: "dodgerblue",
 						}}
-						className={classes.link}
+						className={classes.homelink}
 					>
 						<div
 							key={node.id}
 							style={{ backgroundColor: "dodgerblue" }}
-							className={classes.postContainer}
+							className={classes.postContainerHome}
 						>
 							<h3
 								className={classes.Title}
@@ -67,9 +67,13 @@ class IndexPage extends Component {
 
 	render() {
 		return (
-			<div className={classes.HomeContainer}>
-				<Layout>
+			<Layout height={"250vh"}>
+				<div className={classes.HomeContainer}>
 					<SEO title='Home' />
+					{/* <img
+					src='https://imgur.com/a9ET2dR.gif'
+					className={classes.gif}
+				/> */}
 					<div className={classes.ContentContainer}>
 						<h1
 							style={{
@@ -98,8 +102,8 @@ class IndexPage extends Component {
 						</div>
 						{this.state.posts.length > 0 ? this.state.posts : null}
 					</div>
-				</Layout>
-			</div>
+				</div>
+			</Layout>
 		)
 	}
 }

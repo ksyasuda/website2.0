@@ -1,13 +1,11 @@
-import React, { Component } from "react"
-import classes from "./blog.module.css"
-import { navigate } from "gatsby"
+import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import AllLocations from "../components/AllLocations/AllLocations"
 
 const allLocations = () => {
 	return (
-		<Layout>
+		<Layout height={"250vh"}>
 			<SEO
 				title='All Locations'
 				description='All the locations that I have logged in the travel app'

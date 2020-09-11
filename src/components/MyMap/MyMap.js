@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import * as ReactLeaflet from "react-leaflet"
 // import Button from "../../components/UI/Button/Button"
 import Button from "@material-ui/core/Button"
-import Success from "../../components/Success/Success"
 import axios from "axios"
 import Spinner from "../../components/UI/Spinner/Spinner"
 import classes from "./MyMap.module.css"
@@ -228,7 +227,7 @@ class MyMap extends Component {
 			</Popup>
 		)
 		this.setState({ loading: loading })
-		let post_url = 'https://sudacode-travelapi.herokuapp.com/api'
+		let post_url = "https://sudacode-travelapi.herokuapp.com/api"
 		const response = await axios.post(post_url, data)
 		console.log(response)
 		this.clearState()
