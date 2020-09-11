@@ -13,7 +13,7 @@ import favicon from "../images/favicon.ico"
 import Header from "./header/header"
 import "./layout.css"
 
-const Layout = ({ children, height, id }) => {
+const Layout = ({ children, height, id, backgroundImg }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -27,8 +27,11 @@ const Layout = ({ children, height, id }) => {
 		// console.log("click")
 	}
 	let style = {
-		backgroundColor: "rgb(211, 211, 211)",
+		backgroundImage: backgroundImg,
 		height: "100vh",
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "0 94px",
+		backgroundSize: "101% 120%",
 	}
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		style = {
@@ -42,6 +45,14 @@ const Layout = ({ children, height, id }) => {
 			height: height,
 		}
 	}
+
+	if (backgroundImg !== "") {
+		style = {
+			...style,
+			backgroundColor: "rgb(211, 211, 211)",
+		}
+	}
+	console.log("style", style)
 	return (
 		<>
 			<Helmet>
@@ -63,7 +74,7 @@ const Layout = ({ children, height, id }) => {
 						{/* <NavBar /> */}
 						{children}
 					</main>
-					<footer style={{ marginTop: "8px" }}>
+					<footer style={{ marginTop: "25%" }}>
 						© Kyle Yasuda {new Date().getFullYear()}, Built with
 						{` `}
 						<a

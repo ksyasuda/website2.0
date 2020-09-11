@@ -23,86 +23,146 @@ class IndexPage extends Component {
 			node = node.node
 			if (posts.length < 2) {
 				posts.push(
-					<Link
-						key={node.id}
-						to={node.fields.slug}
-						style={{
-							backgroundColor: "dodgerblue",
-						}}
-						className={classes.homelink}
-					>
-						<div
-							key={node.id}
-							style={{ backgroundColor: "dodgerblue" }}
-							className={classes.postContainerHome}
+					// <Link
+					// 	key={node.id}
+					// 	to={node.fields.slug}
+					// 	style={{
+					// 		backgroundColor: "dodgerblue",
+					// 		width: "10%",
+					// 	}}
+					// >
+					// 	<div
+					// 		key={node.id}
+					// 		style={{
+					// 			backgroundColor: "dodgerblue",
+					// 			width: "30%",
+					// 		}}
+					// 	>
+					// 		<h3
+					// 			className={classes.Title}
+					// 			style={{ marginBottom: "2px" }}
+					// 		>
+					// 			{node.frontmatter.title}
+					// 			{<br />}
+					// 			<span
+					// 				style={{
+					// 					color: "black",
+					// 					fontSize: "small",
+					// 					textDecoration: "none",
+					// 				}}
+					// 			>
+					// 				- {node.frontmatter.date} |{" "}
+					// 				<span className={classes.Subject}>
+					// 					{node.frontmatter.subject}
+					// 				</span>{" "}
+					// 			</span>
+					// 			<hr className={classes.Line} />
+					// 		</h3>
+					// 		<p className={classes.Body}>{node.excerpt}</p>
+					// 	</div>
+					// </Link>
+					<div key={node.id} className={classes.HomePost}>
+						<Link
+							to={node.fields.slug}
+							style={{ textDecoration: "none" }}
 						>
 							<h3
-								className={classes.Title}
-								style={{ marginBottom: "2px" }}
+								style={{
+									fontSize: "18px",
+									textDecoration: "none",
+									position: "relative",
+									left: "5px",
+								}}
 							>
 								{node.frontmatter.title}
-								{<br />}
+								<br />
 								<span
 									style={{
 										color: "black",
 										fontSize: "small",
 										textDecoration: "none",
+										position: "relative",
+										left: "5px",
 									}}
 								>
 									- {node.frontmatter.date} |{" "}
 									<span className={classes.Subject}>
 										{node.frontmatter.subject}
-									</span>{" "}
+									</span>
 								</span>
-								<hr className={classes.Line} />
 							</h3>
-							<p className={classes.Body}>{node.excerpt}</p>
-						</div>
-					</Link>
+							<hr style={{ marginTop: "20px" }} />
+							<p className={classes.HomeBody}>{node.excerpt}</p>
+						</Link>
+					</div>
 				)
 			} else return
 		})
 		this.setState({ posts: posts })
 	}
 
+	temp = () => {
+		return (
+			<div className={classes.ContentContainer}>
+				<h1
+					style={{
+						color: "rebeccapurple",
+					}}
+				>
+					{/* <img
+							src='https://imgur.com/a9ET2dR.gif'
+							className={classes.gif}
+						/> */}
+					Oh Hey, Didn't See You There
+				</h1>
+				<div
+					style={{
+						maxWidth: `300px`,
+						marginBottom: `1.45rem`,
+					}}
+				>
+					{/* <Image /> */}
+					{/* <Russell /> */}
+					<button
+						className={classes.button}
+						onClick={this.onCharlieHandler}
+					>
+						{this.state.charlie ? "NOT Charlie" : "Charlie?"}
+					</button>
+					{this.state.charlie ? <Charlie /> : <Russell />}
+				</div>
+			</div>
+		)
+	}
+
 	render() {
 		return (
-			<Layout height={"250vh"}>
-				<div className={classes.HomeContainer}>
-					<SEO title='Home' />
-					{/* <img
-					src='https://imgur.com/a9ET2dR.gif'
-					className={classes.gif}
-				/> */}
-					<div className={classes.ContentContainer}>
-						<h1
-							style={{
-								color: "rebeccapurple",
-							}}
-						>
-							Oh Hey, Didn't See You There
-						</h1>
-						<div
-							style={{
-								maxWidth: `300px`,
-								marginBottom: `1.45rem`,
-							}}
-						>
-							{/* <Image /> */}
-							{/* <Russell /> */}
-							<button
-								className={classes.button}
-								onClick={this.onCharlieHandler}
-							>
-								{this.state.charlie
-									? "NOT Charlie"
-									: "Charlie?"}
-							</button>
-							{this.state.charlie ? <Charlie /> : <Russell />}
-						</div>
-						{this.state.posts.length > 0 ? this.state.posts : null}
-					</div>
+			<Layout
+				height={"130vh"}
+				backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
+			>
+				{/* <div className={classes.HomeContainer}> */}
+				<SEO title='Home' />
+				<div className={classes.HomeBody}>
+					<h1 className={classes.HomeTitle}>Welcome to Sudacode</h1>
+					<p
+						className={classes.HomeTitle}
+						style={{ fontSize: "20px" }}
+					>
+						A Computer Science portfolio and blog where I change
+						pseudocode into quality sudacode
+					</p>
+					<p
+						style={{
+							textAlign: "center",
+							color: "dodgerblue",
+						}}
+					>
+						Check out some of my recent posts here
+					</p>
+					{this.state.posts.length > 0 ? this.state.posts : null}
 				</div>
+				{/* </div> */}
 			</Layout>
 		)
 	}
