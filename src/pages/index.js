@@ -5,6 +5,9 @@ import Russell from "../components/russell"
 import Charlie from "../components/charlie"
 import classes from "./blog.module.css"
 import { graphql, Link } from "gatsby"
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
+import GitHubIcon from "@material-ui/icons/GitHub"
+import Github from "../components/github"
 class IndexPage extends Component {
 	state = {
 		charlie: false,
@@ -72,6 +75,9 @@ class IndexPage extends Component {
 									textDecoration: "none",
 									position: "relative",
 									left: "5px",
+									textAlign: "left",
+									marginTop: "3px",
+									color: "#191E27",
 								}}
 							>
 								{node.frontmatter.title}
@@ -83,6 +89,8 @@ class IndexPage extends Component {
 										textDecoration: "none",
 										position: "relative",
 										left: "5px",
+										top: "8px",
+										color: "#1D1A28",
 									}}
 								>
 									- {node.frontmatter.date} |{" "}
@@ -91,7 +99,7 @@ class IndexPage extends Component {
 									</span>
 								</span>
 							</h3>
-							<hr style={{ marginTop: "20px" }} />
+							<hr style={{ marginTop: "5px" }} />
 							<p className={classes.HomeBody}>{node.excerpt}</p>
 						</Link>
 					</div>
@@ -138,29 +146,56 @@ class IndexPage extends Component {
 	render() {
 		return (
 			<Layout
-				height={"130vh"}
+				height={"140vh"}
 				backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
 			>
 				{/* <div className={classes.HomeContainer}> */}
 				<SEO title='Home' />
 				<div className={classes.HomeBody}>
 					<h1 className={classes.HomeTitle}>Welcome to Sudacode</h1>
-					<p
-						className={classes.HomeTitle}
-						style={{ fontSize: "20px" }}
-					>
-						A Computer Science portfolio and blog where I change
-						pseudocode into quality sudacode
+					<p className={classes.HomeSubTitle}>
+						A Computer Science portfolio and blog that puts the{" "}
+						<strong>code</strong> in pseudocode
 					</p>
-					<p
-						style={{
-							textAlign: "center",
-							color: "dodgerblue",
-						}}
-					>
-						Check out some of my recent posts here
-					</p>
-					{this.state.posts.length > 0 ? this.state.posts : null}
+					<div className={classes.Home1}>
+						<div className={classes.Github}>
+							<p className={classes.GithubText}>
+								<a
+									href='https://github.com/ksyasuda'
+									target='__blank'
+									rel='noreferrer'
+									className={classes.GithubText}
+								>
+									Click here or on the image to visit my
+									Github page to see more of my projects
+								</a>
+							</p>
+							<a
+								href='https://github.com/ksyasuda'
+								target='__blank'
+								rel='noreferrer'
+							>
+								<Github className={classes.GithubLink} />
+							</a>
+							{/* <Github /> */}
+						</div>
+					</div>
+					<div className={classes.Home2}>
+						<p className={classes.Excerpt}>
+							<span className={classes.CheckOutPosts}>
+								<ArrowDownwardIcon
+									fontSize='16px'
+									style={{ position: "relative", top: "8px" }}
+								/>{" "}
+								Check out some of my recent posts here
+								<ArrowDownwardIcon
+									fontSize='16px'
+									style={{ position: "relative", top: "8px" }}
+								/>
+							</span>{" "}
+						</p>
+						{this.state.posts.length > 0 ? this.state.posts : null}
+					</div>
 				</div>
 				{/* </div> */}
 			</Layout>

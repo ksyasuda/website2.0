@@ -175,7 +175,7 @@
 	padding: 10px;
 	position: relative;
 	top: 15px;
-	left: 8px;
+	left: -18px;
 }
 
 .HomeContainer {
@@ -200,10 +200,44 @@
 
 .HomePost {
 	background-color: dodgerblue;
+	background-color: #908774;
 	position: relative;
-	left: 30%;
 	width: 40%;
-	margin-bottom: 5px;
+	margin-bottom: 4%;
+	position: relative;
+	/* top: -250px; */
+	border-radius: 15px;
+	padding: 5px;
+	float: right;
+	align-self: flex-end;
+	/* left: 75.5%; */
+	top: -15px;
+}
+
+.Home1 {
+	display: flex;
+	float: inline-start;
+	/* background-color: black; */
+}
+
+.Home2 {
+	display: flex;
+	/* background-color: black; */
+	flex-flow: column;
+	position: relative;
+	top: -280px;
+}
+
+.Excerpt {
+	text-align: right;
+	color: dodgerblue;
+	color: rgb(186, 94, 34);
+	position: relative;
+	/* top: -250px; */
+	font-weight: bold;
+	font-size: 16px;
+	position: relative;
+	/* left: 110px; */
 }
 
 .HomeBody {
@@ -211,10 +245,11 @@
 	font-weight: 100;
 	margin-top: -15px;
 	position: relative;
-	left: 5px;
-	top: -8px;
+	/* left: 5px; */
+	top: -10px;
 	text-decoration: none;
 	padding: 3px;
+	color: #4e1a83;
 }
 
 .Home {
@@ -227,13 +262,65 @@
 	text-align: center;
 	color: dodgerblue;
 	position: relative;
-	top: 5%;
+	top: 110px;
 	align-content: center;
+}
+
+.HomeSubTitle {
+	text-align: center;
+	font-size: 18px;
+	position: relative;
+	top: 110px;
+	color: #908774;
+	margin-top: 10px;
 }
 
 .TwoPosts {
 	display: flex;
 	float: left;
+}
+
+.Github {
+	position: relative;
+	top: 157px;
+	width: 45%;
+	/* left: 27.6%; */
+	color: dodgerblue;
+	color: rgb(186, 94, 34);
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	/* background-color: black; */
+}
+
+.GithubText {
+	position: relative;
+	/* top: 10px; */
+	text-decoration: none;
+	color: rgb(186, 94, 34);
+}
+
+.GithubText:hover {
+	color: green;
+}
+
+.GithubText:active {
+	color: blue;
+}
+
+.GithubLink {
+	position: absolute;
+	z-index: 100;
+}
+
+.GithubLink:hover {
+	border: 2px solid green;
+}
+
+.CheckOutPosts {
+	position: relative;
+	left: -100px;
+	top: -25px;
 }
 
 @media (max-width: 800px) {

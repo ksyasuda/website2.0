@@ -33,7 +33,7 @@ export default function about() {
 				</p>
 				<Neofetch style={{ width: "60%", left: "20%" }} />
 			</div>
-			<Breadcrumbs
+			{/* <Breadcrumbs
 				className={classes.Breadcrumbs}
 				aria-label='breadcrumb'
 			>
@@ -102,7 +102,7 @@ export default function about() {
 						Blog
 					</Button>
 				</Link>
-			</Breadcrumbs>
+			</Breadcrumbs> */}
 		</Layout>
 	)
 }
