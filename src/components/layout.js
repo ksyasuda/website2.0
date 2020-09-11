@@ -27,7 +27,7 @@ const Layout = ({ children, height, id }) => {
 		// console.log("click")
 	}
 	let style = {
-		backgroundColor: "rgb(211, 211, 211)",
+		// backgroundColor: "rgb(211, 211, 211)",
 		height: "100vh",
 	}
 	if (typeof window !== "undefined" && window.screen.height < 1000) {

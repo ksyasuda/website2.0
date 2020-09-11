@@ -49,7 +49,8 @@ const blog = ({ data }) => {
 									className={classes.Title}
 									style={{ marginBottom: "2px" }}
 								>
-									{node.frontmatter.title}{<br/>}
+									{node.frontmatter.title}
+									{<br />}
 									<span
 										style={{
 											color: "black",

@@ -157,3 +157,32 @@
 	top: 15px;
 	left: 8px;
 }
+
+.HomeContainer {
+	background-image: url("../images/sudasite.gif");
+	background-repeat: no-repeat;
+	height: 200vh;
+	position: relative;
+	background-position-y: 73%;
+	/* top: -26px;
+	left: -20px; */
+	width: 100%;
+}
+
+.ContentContainer {
+	position: relative;
+	top: 65px;
+}
+
+@media (max-width: 800px) {
+	.HomeContainer {
+		background-image: url("../images/sudasite.gif");
+		background-repeat: no-repeat;
+		height: 200vh;
+		position: relative;
+		background-position-y: 67%;
+		/* top: -26px;
+		left: -20px; */
+		width: 100%;
+	}
+}

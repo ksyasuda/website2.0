@@ -21,73 +21,85 @@ class IndexPage extends Component {
 		data.allMarkdownRemark.edges.map(node => {
 			// console.log(node)
 			node = node.node
-			posts.push(
-				<Link
-					key={node.id}
-					to={node.fields.slug}
-					style={{
-						backgroundColor: "dodgerblue",
-					}}
-					className={classes.link}
-				>
-					<div
+			if (posts.length < 2) {
+				posts.push(
+					<Link
 						key={node.id}
-						style={{ backgroundColor: "dodgerblue" }}
-						className={classes.postContainer}
+						to={node.fields.slug}
+						style={{
+							backgroundColor: "dodgerblue",
+						}}
+						className={classes.link}
 					>
-						<h3
-							className={classes.Title}
-							style={{ marginBottom: "2px" }}
+						<div
+							key={node.id}
+							style={{ backgroundColor: "dodgerblue" }}
+							className={classes.postContainer}
 						>
-							{node.frontmatter.title}
-							{<br />}
-							<span
-								style={{
-									color: "black",
-									fontSize: "small",
-									textDecoration: "none",
-								}}
+							<h3
+								className={classes.Title}
+								style={{ marginBottom: "2px" }}
 							>
-								- {node.frontmatter.date} |{" "}
-								<span className={classes.Subject}>
-									{node.frontmatter.subject}
-								</span>{" "}
-							</span>
-							<hr className={classes.Line} />
-						</h3>
-						<p className={classes.Body}>{node.excerpt}</p>
-					</div>
-				</Link>
-			)
+								{node.frontmatter.title}
+								{<br />}
+								<span
+									style={{
+										color: "black",
+										fontSize: "small",
+										textDecoration: "none",
+									}}
+								>
+									- {node.frontmatter.date} |{" "}
+									<span className={classes.Subject}>
+										{node.frontmatter.subject}
+									</span>{" "}
+								</span>
+								<hr className={classes.Line} />
+							</h3>
+							<p className={classes.Body}>{node.excerpt}</p>
+						</div>
+					</Link>
+				)
+			} else return
 		})
 		this.setState({ posts: posts })
 	}
 
 	render() {
 		return (
-			<Layout>
-				<SEO title='Home' />
-				<h1 style={{ color: "rebeccapurple" }}>
-					Oh Hey, Didn't See You There
-				</h1>
-				<div
-					style={{
-						maxWidth: `300px`,
-						marginBottom: `1.45rem`,
-					}}
-				>
-					{/* <Image /> */}
-					{/* <Russell /> */}
-					<button
-						className={classes.button}
-						onClick={this.onCharlieHandler}
-					>
-						{this.state.charlie ? "NOT Charlie" : "Charlie?"}
-					</button>
-					{this.state.charlie ? <Charlie /> : <Russell />}
-				</div>
-				{this.state.posts.length > 0 ? this.state.posts : null}
-			</Layout>
+			<div className={classes.HomeContainer}>
+				<Layout>
+					<SEO title='Home' />
+					<div className={classes.ContentContainer}>
+						<h1
+							style={{
+								color: "rebeccapurple",
+							}}
+						>
+							Oh Hey, Didn't See You There
+						</h1>
+						<div
+							style={{
+								maxWidth: `300px`,
+								marginBottom: `1.45rem`,
+							}}
+						>
+							{/* <Image /> */}
+							{/* <Russell /> */}
+							<button
+								className={classes.button}
+								onClick={this.onCharlieHandler}
+							>
+								{this.state.charlie
+									? "NOT Charlie"
+									: "Charlie?"}
+							</button>
+							{this.state.charlie ? <Charlie /> : <Russell />}
+						</div>
+						{this.state.posts.length > 0 ? this.state.posts : null}
+					</div>
+				</Layout>
+			</div>
 		)
 	}
 }
