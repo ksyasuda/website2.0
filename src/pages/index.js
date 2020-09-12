@@ -149,7 +149,6 @@ class IndexPage extends Component {
 								/>{" "}
 								Check out some of my recent posts here
 								<ArrowDownwardIcon
-									fontSize='16px'
 									style={{ position: "relative", top: "8px" }}
 								/>
 							</span>{" "}

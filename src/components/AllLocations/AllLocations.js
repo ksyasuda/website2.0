@@ -84,8 +84,8 @@ class AllLocations extends Component {
 
 	popupLinkHandler = event => {
 		event.preventDefault()
-		console.log("popup")
-		console.log(event.target)
+		// console.log("popup")
+		// console.log(event.target)
 		let temp = event.target.children[0].children[0].innerText.substr(0, 1)
 		// console.log(parseInt(temp, 10));
 		let marker = this.state.markers[temp - 1]
@@ -98,13 +98,13 @@ class AllLocations extends Component {
 		// this.addEventListener();
 		// console.log('All-locations MOUNT');
 		let url = "https://sudacode-travelapi.herokuapp.com/loc"
-		console.log("mounting")
+		// console.log("mounting")
 		axios.get(url).then(response => {
 			console.log("response", response)
 			if (response.data.length < 1) return
 			// console.log('right after the get call');
 			let data = response.data
-			console.log(response)
+			// console.log(response)
 			let lat, lng, locName, place_id, time, shortName
 			let counter = 1
 			let markers = [...this.state.markers]
@@ -222,7 +222,7 @@ class AllLocations extends Component {
 			"https://sudacode-travelapi.herokuapp.com/remove-all",
 			{}
 		)
-		console.log(response)
+		// console.log(response)
 		// document.location.reload();
 		// console.log(this.state.redirect)
 		// this.setState({ redirect: true })
@@ -240,7 +240,7 @@ class AllLocations extends Component {
 			`https://sudacode-travelapi.herokuapp.com/remove-elt`,
 			data
 		)
-		console.log(response)
+		// console.log(response)
 		// this.props.history.push('/');
 		// document.location.reload(true);
 		// this.setState({ redirect: true })

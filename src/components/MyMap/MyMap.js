@@ -56,16 +56,16 @@ class MyMap extends Component {
 					</Popup>
 				)
 				this.setState({ loading: loading })
-				console.log("getting location")
+				// console.log("getting location")
 				const response = await axios.get(geocodingUrl)
-				console.log(response)
+				// console.log(response)
 				let nice
 				if (response.data.results.length === 0) {
 					nice = response.data.plus_code.compound_code
 				} else {
 					nice = response.data.results[0].formatted_address
 				}
-				console.log("location found", nice)
+				// console.log("location found", nice)
 				this.setState({ loading: null })
 				// console.log(response.data.results[0].formatted_address);
 				// console.log(response);
@@ -169,7 +169,7 @@ class MyMap extends Component {
 			lng = response.data.results[0].geometry.location.lng
 			name = response.data.results[0].formatted_address
 			place_id = response.data.results[0].place_id
-			console.log(response.data.results)
+			// console.log(response.data.results)
 			let temp = name.split(",")
 			//! street, location, state/zip, country
 			if (temp.length === 4) {
@@ -214,7 +214,7 @@ class MyMap extends Component {
 		const entryNum = this.state.counter
 		const shortName = this.state.shortName
 		const data = { locName, shortName, place_id, lat, lng, time, entryNum }
-		console.log("fetching")
+		// console.log("fetching")
 		let loading = this.state.loading
 		loading = (
 			<Popup
@@ -229,7 +229,7 @@ class MyMap extends Component {
 		this.setState({ loading: loading })
 		let post_url = "https://sudacode-travelapi.herokuapp.com/api"
 		const response = await axios.post(post_url, data)
-		console.log(response)
+		// console.log(response)
 		this.clearState()
 		let success = this.state.success
 		// success = <Success />;
@@ -262,7 +262,7 @@ class MyMap extends Component {
 			marginLeft: "10px",
 			marginBottom: "18px",
 			textAlign: "center",
-			left: "31.9%",
+			// left: "32.5%",
 		}
 		// const position = [this.state.lat, this.state.lng];
 		return (
@@ -277,62 +277,61 @@ class MyMap extends Component {
 							position: "relative",
 							left: "10%",
 							border: "1px solid hotpink",
+							zIndex: "200",
 						}}
+						className={classes.Mapp}
 					>
 						<TileLayer
 							opacity={this.state.opacity}
 							attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 							url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
 						/>
-						{/* <Marker position={position}>
-				<Popup>
-					NICE
-				</Popup>
-				</Marker> */}
 						{this.state.loading}
 						{this.state.markers}
 					</LeafletMap>
 				) : null}
 				{/* {this.state.success} */}
-				<Button
-					color='primary'
-					variant='contained'
-					onClick={this.getLocation}
-					className={classes.Buttons}
-					style={style}
-				>
-					Find Location
-				</Button>
-				<Button
-					color='primary'
-					variant='contained'
-					onClick={this.onSendHandler}
-					className={classes.Buttons}
-					style={style}
-				>
-					Send It!
-				</Button>
-				<Button
-					color='primary'
-					variant='contained'
-					onClick={this.onZoomHandler}
-					className={classes.Buttons}
-					style={style}
-				>
-					Zoom In
-				</Button>
-				<Button
-					color='primary'
-					variant='contained'
-					className={classes.Buttons}
-					onClick={event => {
-						event.preventDefault()
-						return navigate("/allLocations/")
-					}}
-					style={style}
-				>
-					All Locations
-				</Button>
+				<div className={classes.MapNav}>
+					<Button
+						color='primary'
+						variant='contained'
+						onClick={this.getLocation}
+						className={classes.Buttons}
+						style={style}
+					>
+						Find Location
+					</Button>
+					<Button
+						color='primary'
+						variant='contained'
+						onClick={this.onSendHandler}
+						className={classes.Buttons}
+						style={style}
+					>
+						Send It!
+					</Button>
+					<Button
+						color='primary'
+						variant='contained'
+						onClick={this.onZoomHandler}
+						className={classes.Buttons}
+						style={style}
+					>
+						Zoom In
+					</Button>
+					<Button
+						color='primary'
+						variant='contained'
+						className={classes.Buttons}
+						onClick={event => {
+							event.preventDefault()
+							return navigate("/allLocations/")
+						}}
+						style={style}
+					>
+						All Locations
+					</Button>
+				</div>
 				<h2 style={{ textAlign: "center" }}>
 					Or Search For A Location Below
 				</h2>

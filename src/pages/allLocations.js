@@ -5,7 +5,7 @@ import AllLocations from "../components/AllLocations/AllLocations"
 
 const allLocations = () => {
 	return (
-		<Layout height={"250vh"}>
+		<Layout height={"230vh"}>
 			<SEO
 				title='All Locations'
 				description='All the locations that I have logged in the travel app'

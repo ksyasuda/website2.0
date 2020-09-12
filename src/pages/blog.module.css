@@ -175,7 +175,7 @@
 	padding: 10px;
 	position: relative;
 	top: 15px;
-	left: -18px;
+	left: -14px;
 }
 
 .HomeContainer {
@@ -227,7 +227,7 @@
 	/* background-color: black; */
 	flex-flow: column;
 	position: relative;
-	top: -200px;
+	top: -250px;
 }
 
 .Excerpt {
@@ -339,5 +339,51 @@
 		/* top: -26px;
 		left: -20px; */
 		width: 100%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.Home1 {
+		left: 250px;
+	}
+	.GithubText {
+		text-align: center;
+		left: 2px;
+	}
+	.Home2 {
+		top: 220px;
+		margin-bottom: 200px;
+		right: 250px;
+	}
+	.CheckOutPosts {
+		left: 5px;
+	}
+}
+
+@media (max-width: 800px) {
+	.Home1 {
+		position: relative;
+		left: 35px;
+		width: 180%;
+	}
+	.GithubText {
+		text-align: center;
+		position: relative;
+		margin-bottom: -40px;
+	}
+	.Home2 {
+		position: relative;
+		top: 220px;
+		width: 170%;
+		/* left: -253px; */
+		right: 285px;
+		margin-bottom: 200px;
+	}
+	.CheckOutPosts {
+		position: relative;
+		left: 60px;
+	}
+	.Breadcrumbs {
+		left: 55px;
 	}
 }

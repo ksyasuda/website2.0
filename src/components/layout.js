@@ -34,17 +34,21 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 	const onClickHandler = event => {
 		// console.log("click")
 	}
-	let style = {
-		backgroundImage: backgroundImg,
-		height: "140vh",
-		backgroundRepeat: "no-repeat",
-		backgroundPosition: "0 90px",
-		backgroundSize: "101% 120%",
+	let style
+	if (backgroundImg !== "") {
+		style = {
+			backgroundImage: backgroundImg,
+			height: "140vh",
+			backgroundRepeat: "no-repeat",
+			backgroundPosition: "0 90px",
+			backgroundSize: "101% 120%",
+		}
 	}
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		style = {
 			...style,
 			height: "130vh",
+			backgroundImage: "",
 		}
 	}
 	if (height !== undefined) {
@@ -58,7 +62,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		style = {
 			...style,
 			backgroundColor: "rgb(211, 211, 211)",
-			height: "200vh",
+			// height: "200vh",
 		}
 	}
 	// console.log("style", style)
@@ -87,7 +91,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 						style={{
 							marginTop: "10px",
 							position: "relative",
-							right: "15px",
+							right: "10px",
 							textAlign: "left",
 							color: "#908774",
 						}}

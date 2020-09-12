@@ -23,6 +23,7 @@ class Header extends Component {
 	onToggleMenuHandler = event => {
 		// console.log(event, "toggling menu")
 		this.setState({ show: !this.state.show })
+		this.props.clicked()
 	}
 
 	render() {
