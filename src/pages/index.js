@@ -26,44 +26,6 @@ class IndexPage extends Component {
 			node = node.node
 			if (posts.length < 2) {
 				posts.push(
-					// <Link
-					// 	key={node.id}
-					// 	to={node.fields.slug}
-					// 	style={{
-					// 		backgroundColor: "dodgerblue",
-					// 		width: "10%",
-					// 	}}
-					// >
-					// 	<div
-					// 		key={node.id}
-					// 		style={{
-					// 			backgroundColor: "dodgerblue",
-					// 			width: "30%",
-					// 		}}
-					// 	>
-					// 		<h3
-					// 			className={classes.Title}
-					// 			style={{ marginBottom: "2px" }}
-					// 		>
-					// 			{node.frontmatter.title}
-					// 			{<br />}
-					// 			<span
-					// 				style={{
-					// 					color: "black",
-					// 					fontSize: "small",
-					// 					textDecoration: "none",
-					// 				}}
-					// 			>
-					// 				- {node.frontmatter.date} |{" "}
-					// 				<span className={classes.Subject}>
-					// 					{node.frontmatter.subject}
-					// 				</span>{" "}
-					// 			</span>
-					// 			<hr className={classes.Line} />
-					// 		</h3>
-					// 		<p className={classes.Body}>{node.excerpt}</p>
-					// 	</div>
-					// </Link>
 					<div key={node.id} className={classes.HomePost}>
 						<Link
 							to={node.fields.slug}
@@ -84,7 +46,6 @@ class IndexPage extends Component {
 								<br />
 								<span
 									style={{
-										color: "black",
 										fontSize: "small",
 										textDecoration: "none",
 										position: "relative",
@@ -167,7 +128,7 @@ class IndexPage extends Component {
 									className={classes.GithubText}
 								>
 									Click here or on the image to visit my
-									Github page to see more of my projects
+									Github page to see more projects
 								</a>
 							</p>
 							<a
@@ -184,7 +145,6 @@ class IndexPage extends Component {
 						<p className={classes.Excerpt}>
 							<span className={classes.CheckOutPosts}>
 								<ArrowDownwardIcon
-									fontSize='16px'
 									style={{ position: "relative", top: "8px" }}
 								/>{" "}
 								Check out some of my recent posts here

@@ -215,8 +215,10 @@
 }
 
 .Home1 {
+	position: relative;
 	display: flex;
 	float: inline-start;
+	top: 20px;
 	/* background-color: black; */
 }
 
@@ -225,7 +227,7 @@
 	/* background-color: black; */
 	flex-flow: column;
 	position: relative;
-	top: -280px;
+	top: -200px;
 }
 
 .Excerpt {
@@ -294,9 +296,13 @@
 }
 
 .GithubText {
-	position: relative;
-	/* top: 10px; */
+	position: absolute;
+	z-index: 100;
+	top: -30px;
+	left: 5px;
+	width: 100%;
 	text-decoration: none;
+	text-align: left;
 	color: rgb(186, 94, 34);
 }
 

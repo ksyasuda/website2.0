@@ -36,10 +36,10 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 	}
 	let style = {
 		backgroundImage: backgroundImg,
-		height: "100vh",
+		height: "140vh",
 		backgroundRepeat: "no-repeat",
-		backgroundPosition: "0 94px",
-		backgroundSize: "101% 130%",
+		backgroundPosition: "0 90px",
+		backgroundSize: "101% 120%",
 	}
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		style = {
@@ -58,6 +58,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		style = {
 			...style,
 			backgroundColor: "rgb(211, 211, 211)",
+			height: "200vh",
 		}
 	}
 	// console.log("style", style)

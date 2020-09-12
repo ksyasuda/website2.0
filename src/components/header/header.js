@@ -33,8 +33,8 @@ class Header extends Component {
 					style={{
 						display: "flex",
 						background: `rebeccapurple`,
-						marginBottom: `0px`,
-						padding: "20px",
+						marginBottom: `-5px`,
+						padding: "21.5px",
 					}}
 				>
 					<div
@@ -84,9 +84,11 @@ class Header extends Component {
 							clicked={this.onToggleMenuHandler}
 						/>
 					</div>
-					<div style={{
-						position: 'relative',
-						}}>
+					<div
+						style={{
+							position: "relative",
+						}}
+					>
 						<DrawerToggle clicked={this.onToggleMenuHandler} />
 					</div>
 				</div>
