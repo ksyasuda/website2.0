@@ -53,7 +53,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		}
 	}
 	//* for laptop but probably not phone
-	console.log("height", window.screen.height)
+	//console.log("height", window.screen.height)
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		console.log("laptop")
 		style = {
