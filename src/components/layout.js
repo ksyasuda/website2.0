@@ -48,7 +48,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		style = {
 			...style,
-			height: "130vh",
+			height: "200vh",
 			backgroundImage: backgroundImg,
 			backgroundPosition: "0 90px",
 		}
