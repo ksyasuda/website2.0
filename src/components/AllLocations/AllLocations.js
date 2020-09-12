@@ -42,7 +42,9 @@ class AllLocations extends Component {
 			</Popup>
 		)
 		this.setState({ loading: loading, spinner: true })
-		const response = await axios.get(`/weather/${lat},${lng}`)
+		let url = `https://sudacode-travelapi.herokuapp.com/weather/${lat},${lng}`
+		// const response = await axios.get(`/weather/${lat},${lng}`)
+		const response = await axios.get(url)
 		// console.log(response);
 		let temp = response.data.current.feels_like
 		let weather = response.data.current.weather[0].description
@@ -105,7 +107,7 @@ class AllLocations extends Component {
 			// console.log('right after the get call');
 			let data = response.data
 			// console.log(response)
-			let lat, lng, locName, place_id, time, shortName
+			let lat, lng, locName, place_id, time, shortName, entryNum
 			let counter = 1
 			let markers = [...this.state.markers]
 			let nodes = [...this.state.nodes]
@@ -119,6 +121,7 @@ class AllLocations extends Component {
 				place_id = item.place_id
 				time = item.time
 				shortName = item.shortName
+				entryNum = item.entryNum
 				let places = this.state.places
 				// let root = document.createElement('div');
 				// let loc = document.createElement('div');
@@ -131,7 +134,7 @@ class AllLocations extends Component {
 				let namee = (
 					<Name
 						clicked={event => this.popupLinkHandler(event)}
-						counter={counter}
+						counter={entryNum}
 						locName={locName}
 					/>
 				)
@@ -156,7 +159,7 @@ class AllLocations extends Component {
 				// document.body.append(root);
 				let l = (
 					<Location
-						key={counter}
+						key={counter++}
 						Datee={datee}
 						Loc={locs}
 						Name={namee}
@@ -164,7 +167,7 @@ class AllLocations extends Component {
 				)
 				locations.push(l)
 				let latlng = [lat, lng]
-				let elt = `${counter++}.  ${shortName}`
+				let elt = `${entryNum}.  ${shortName}`
 				dropdown.push(elt)
 				// let marker = (
 				// 	<Marker position={[lat,lng]} key={time}>
@@ -233,6 +236,7 @@ class AllLocations extends Component {
 		if (this.state.markers.length < 1) return
 		let stuff = document.getElementById("select-num")
 		let num = parseInt(stuff.value, 10)
+		console.log(num)
 		// console.log('num', num);
 		// console.log(stuff.value);
 		const data = { entryNum: num }
@@ -285,7 +289,7 @@ class AllLocations extends Component {
 									return (
 										<Marker
 											position={[marker[0], marker[1]]}
-											key={ctr++}
+											key={marker[0]}
 										>
 											<Popup
 												onClose={this.popupCloseHandler}
@@ -350,26 +354,39 @@ class AllLocations extends Component {
 						className={classes.Select}
 						style={{
 							position: "relative",
-							top: "-3px",
+							// top: "-3px",
 						}}
 					>
 						{this.state.dropdown.length > 0
 							? this.state.dropdown.map(elt => {
-									{
-										/* console.log(elt); */
-									}
 									let temp = elt.split(".")
 									let val = parseInt(temp[0], 10)
-									return (
-										<option
-											key={val}
-											className={classes.Option}
-											name='select'
-											value={val++}
-										>
-											{elt}
-										</option>
-									)
+									let option
+									if (val === 1) {
+										option = (
+											<option
+												key={val}
+												// className={classes.Option}
+												name='select'
+												value={val}
+												defaultValue={val}
+											>
+												{elt}
+											</option>
+										)
+									} else {
+										option = (
+											<option
+												key={val}
+												// className={classes.Option}
+												name='select'
+												value={val}
+											>
+												{elt}
+											</option>
+										)
+									}
+									return option
 									{
 										/* return (<option key={num} className={classes.Option} name="select" value={inum}>{`${num} ${name}`}</option>); */
 									}

@@ -3,8 +3,8 @@ title: "Setting Up Ubuntu 20.04 with WSL 2"
 date: "8/25/2020 | 12:46 AM"
 subject: "Setup"
 default_height: "1800vh"
-laptop_height: "2850vh"
-phone_height: "3600vh"
+laptop_height: "2000vh"
+phone_height: "1785vh"
 ---
 
 <!-- <style>

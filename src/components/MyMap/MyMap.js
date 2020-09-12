@@ -24,6 +24,7 @@ class MyMap extends Component {
 			success: null,
 			uploading: false,
 			opacity: 1,
+			loading: [],
 		}
 	}
 	// state = {
@@ -214,6 +215,7 @@ class MyMap extends Component {
 		const entryNum = this.state.counter
 		const shortName = this.state.shortName
 		const data = { locName, shortName, place_id, lat, lng, time, entryNum }
+		// console.log("post id", entryNum)
 		// console.log("fetching")
 		let loading = this.state.loading
 		loading = (
@@ -236,7 +238,7 @@ class MyMap extends Component {
 		success = <Spinner />
 		this.setState({
 			success: success,
-			counter: this.state.counter + 1,
+			counter: entryNum + 1,
 			loading: null,
 		})
 		setTimeout(() => {

@@ -50,7 +50,7 @@
 	box-sizing: border-box;
 	border-left: 2px solid black;
 	border-bottom: 2px solid black;
-	top: 5px;
+	top: 9px;
 }
 
 .Select:hover {
@@ -64,6 +64,7 @@
 .Option {
 	border: 5px solid black;
 	box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+	position: relative;
 }
 
 .Name {

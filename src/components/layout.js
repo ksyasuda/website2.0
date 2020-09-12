@@ -40,17 +40,28 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 			backgroundImage: backgroundImg,
 			height: "140vh",
 			backgroundRepeat: "no-repeat",
-			backgroundPosition: "0 90px",
+			backgroundPosition: "0 97px",
 			backgroundSize: "101% 120%",
 		}
 	}
+	//* for laptop but probably not phone
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
 		style = {
 			...style,
 			height: "130vh",
+			backgroundImage: backgroundImg,
+			backgroundPosition: "0 90px",
+		}
+	}
+
+	if (typeof window !== "undefined" && window.screen.width < 800) {
+		style = {
+			...style,
 			backgroundImage: "",
 		}
 	}
+
+	//! if a height for the layout is specified then apply the new height to style
 	if (height !== undefined) {
 		style = {
 			...style,
@@ -58,10 +69,12 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		}
 	}
 
+	//! if there is not a background image set then set the background color to the default
 	if (backgroundImg !== "") {
 		style = {
 			...style,
 			backgroundColor: "rgb(211, 211, 211)",
+			// backgroundColor: "rgb(49, 53, 61)",
 			// height: "200vh",
 		}
 	}
