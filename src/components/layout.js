@@ -35,37 +35,39 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		// console.log("click")
 	}
 	let style
+	//! if a height for the layout is specified then apply the new height to style
+	if (height !== undefined) {
+		style = {
+			...style,
+			height: height,
+		}
+	}
+
 	if (backgroundImg !== "") {
 		style = {
+			...style,
 			backgroundImage: backgroundImg,
-			height: "140vh",
 			backgroundRepeat: "no-repeat",
 			backgroundPosition: "0 97px",
 			backgroundSize: "101% 120%",
 		}
 	}
 	//* for laptop but probably not phone
+	console.log("height", window.screen.height)
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
+		console.log("laptop")
 		style = {
 			...style,
-			height: "200vh",
+			height: "230vh",
 			backgroundImage: backgroundImg,
 			backgroundPosition: "0 90px",
 		}
 	}
 
-	if (typeof window !== "undefined" && window.screen.width < 800) {
+	if (typeof window !== "undefined" && window.screen.width < 700) {
 		style = {
 			...style,
 			backgroundImage: "",
-		}
-	}
-
-	//! if a height for the layout is specified then apply the new height to style
-	if (height !== undefined) {
-		style = {
-			...style,
-			height: height,
 		}
 	}
 
@@ -78,6 +80,8 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 			// height: "200vh",
 		}
 	}
+
+	console.log(style)
 	// console.log("style", style)
 	return (
 		<>

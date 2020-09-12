@@ -227,7 +227,7 @@
 	/* background-color: black; */
 	flex-flow: column;
 	position: relative;
-	top: -250px;
+	top: -235px;
 }
 
 .Excerpt {
@@ -325,7 +325,7 @@
 
 .CheckOutPosts {
 	position: relative;
-	left: -100px;
+	left: -65px;
 	top: -25px;
 }
 

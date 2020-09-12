@@ -12,9 +12,9 @@ const blogPost = ({ data }) => {
 	//   console.log(post.frontmatter.height)
 	//   console.log(window.screen.height)
 	let height = post.frontmatter.default_height
-	typeof window !== "undefined"
-		? console.log(window.screen.height, window.screen.width)
-		: null
+	// typeof window !== "undefined"
+	// 	? console.log(window.screen.height, window.screen.width)
+	// 	: null
 	if (
 		typeof window !== "undefined" &&
 		window.screen.height <= 1080 &&
