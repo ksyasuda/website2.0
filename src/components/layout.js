@@ -36,12 +36,12 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 	}
 	let style
 	//! if a height for the layout is specified then apply the new height to style
-	if (height !== undefined) {
-		style = {
-			...style,
-			height: height,
-		}
-	}
+	// if (height !== undefined) {
+	// 	style = {
+	// 		...style,
+	// 		height: height,
+	// 	}
+	// }
 
 	if (backgroundImg !== "") {
 		style = {
@@ -53,15 +53,16 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		}
 	}
 	//* for laptop but probably not phone
-	//console.log("height", window.screen.height)
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
+		console.log("height", window.screen.height)
 		console.log("laptop")
 		style = {
 			...style,
-			height: "230vh",
 			backgroundImage: backgroundImg,
 			backgroundPosition: "0 90px",
+			height: "300vh",
 		}
+		console.log("style", style)
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
@@ -81,7 +82,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		}
 	}
 
-	console.log(style)
+	// console.log(style)
 	// console.log("style", style)
 	return (
 		<>
