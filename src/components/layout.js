@@ -43,12 +43,6 @@ const Layout = ({
 	}
 	let style = { height: height }
 	//! if a height for the layout is specified then apply the new height to style
-	if (height !== undefined) {
-		style = {
-			...style,
-			height: height,
-		}
-	}
 
 	if (backgroundImg !== undefined) {
 		style = {
@@ -58,21 +52,6 @@ const Layout = ({
 			// backgroundPosition: "0 97px",
 			backgroundSize: "101% 120%",
 		}
-	}
-	//* for laptop but probably not phone
-	if (
-		typeof window !== "undefined" &&
-		window.screen.height < 800 &&
-		!isBlog
-	) {
-		// console.log("height", window.screen.height)
-		// console.log("laptop")
-		style = {
-			...style,
-			backgroundImage: backgroundImg,
-			height: height,
-		}
-		// console.log("style", style)
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
@@ -102,7 +81,7 @@ const Layout = ({
 	}
 
 	// console.log(style)
-	console.log("style", style)
+	// console.log("style", style)
 	return (
 		<>
 			<Helmet>

@@ -99,13 +99,14 @@ class AllLocations extends Component {
 	componentDidMount = () => {
 		// this.addEventListener();
 		// console.log('All-locations MOUNT');
-		let url = "https://sudacode-travelapi.herokuapp.com/loc"
+		// let url = "https://sudacode-travelapi.herokuapp.com/loc"
+		let url = "https://gatsby-websitev2.firebaseio.com/all-locations.json"
 		// console.log("mounting")
 		axios.get(url).then(response => {
 			console.log("response", response)
-			if (response.data.length < 1) return
+			// if (response.data.length < 1) return
 			// console.log('right after the get call');
-			let data = response.data
+			// let data = response.data
 			// console.log(response)
 			let lat, lng, locName, place_id, time, shortName, entryNum
 			let counter = 1
@@ -113,15 +114,15 @@ class AllLocations extends Component {
 			let nodes = [...this.state.nodes]
 			let locations = [...this.state.locations]
 			let dropdown = [...this.state.dropdown]
-			for (let item of data) {
-				// console.log('item', item);
-				lat = item.lat
-				lng = item.lng
-				locName = item.locName
-				place_id = item.place_id
-				time = item.time
-				shortName = item.shortName
-				entryNum = item.entryNum
+			for (let item in response.data) {
+				console.log("item", response.data[item])
+				lat = response.data[item].lat
+				lng = response.data[item].lng
+				locName = response.data[item].locName
+				place_id = response.data[item].place_id
+				time = response.data[item].time
+				shortName = response.data[item].shortName
+				entryNum = counter++
 				let places = this.state.places
 				// let root = document.createElement('div');
 				// let loc = document.createElement('div');
@@ -359,6 +360,9 @@ class AllLocations extends Component {
 					>
 						{this.state.dropdown.length > 0
 							? this.state.dropdown.map(elt => {
+									{
+										/* console.log(elt) */
+									}
 									let temp = elt.split(".")
 									let val = parseInt(temp[0], 10)
 									let option
@@ -387,9 +391,6 @@ class AllLocations extends Component {
 										)
 									}
 									return option
-									{
-										/* return (<option key={num} className={classes.Option} name="select" value={inum}>{`${num} ${name}`}</option>); */
-									}
 							  })
 							: null}
 					</select>

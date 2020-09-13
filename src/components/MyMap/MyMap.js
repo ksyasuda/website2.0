@@ -214,7 +214,15 @@ class MyMap extends Component {
 		const place_id = this.state.place_id
 		const entryNum = this.state.counter
 		const shortName = this.state.shortName
-		const data = { locName, shortName, place_id, lat, lng, time, entryNum }
+		// const data = { locName, shortName, place_id, lat, lng, time, entryNum }
+		const data = {
+			locName: locName,
+			shortName: shortName,
+			place_id: place_id,
+			lat: lat,
+			lng: lng,
+			time: time,
+		}
 		// console.log("post id", entryNum)
 		// console.log("fetching")
 		let loading = this.state.loading
@@ -229,9 +237,16 @@ class MyMap extends Component {
 			</Popup>
 		)
 		this.setState({ loading: loading })
-		let post_url = "https://sudacode-travelapi.herokuapp.com/api"
-		const response = await axios.post(post_url, data)
-		// console.log(response)
+		// let post_url = "https://sudacode-travelapi.herokuapp.com/api"
+		let post_url =
+			"https://gatsby-websitev2.firebaseio.com/all-locations.json"
+		let response
+		try {
+			response = await axios.post(post_url, data)
+		} catch (err) {
+			alert(err)
+		}
+		console.log(response)
 		this.clearState()
 		let success = this.state.success
 		// success = <Success />;
