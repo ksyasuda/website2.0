@@ -76,14 +76,14 @@ const Layout = ({
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
-		console.log("phone")
+		// console.log("phone")
 		style = {
 			...style,
 			backgroundImage: "",
 		}
-		console.log("phone height", phoneHeight)
+		// console.log("phone height", phoneHeight)
 		if (phoneHeight !== undefined) {
-			console.log("phone height", phoneHeight)
+			// console.log("inner if")
 			style = {
 				...style,
 				height: phoneHeight,
