@@ -115,14 +115,14 @@ class AllLocations extends Component {
 			let locations = [...this.state.locations]
 			let dropdown = [...this.state.dropdown]
 			for (let item in response.data) {
-				console.log("item", response.data[item])
+				// console.log("item", response.data[item])
 				lat = response.data[item].lat
 				lng = response.data[item].lng
 				locName = response.data[item].locName
 				place_id = response.data[item].place_id
 				time = response.data[item].time
 				shortName = response.data[item].shortName
-				entryNum = counter++
+				entryNum = counter
 				let places = this.state.places
 				// let root = document.createElement('div');
 				// let loc = document.createElement('div');
@@ -209,15 +209,15 @@ class AllLocations extends Component {
 	}
 
 	onViewportChangedHandler = viewport => {
-		if (this.state.popup) return
+		// if (this.state.popup) return
 		// console.log(viewport);
-		let lat = this.state.lat
-		let lng = this.state.lng
-		let zoom = this.state.zoom
-		lat = viewport.center[0]
-		lng = viewport.center[1]
-		zoom = viewport.zoom
-		this.setState({ lat: lat, lng: lng, zoom: zoom })
+		// let lat = this.state.lat
+		// let lng = this.state.lng
+		// let zoom = this.state.zoom
+		// lat = viewport.center[0]
+		// lng = viewport.center[1]
+		// zoom = viewport.zoom
+		// this.setState({ lat: lat, lng: lng, zoom: zoom })
 	}
 
 	onRemoveDataHandler = async () => {

@@ -108,7 +108,7 @@ class IndexPage extends Component {
 		let height = "160vh"
 		if (typeof window !== "undefined") {
 			if (window.screen.width < 700) {
-				height = "260vh"
+				height = "320vh"
 				// console.log("height", height)
 			}
 		}

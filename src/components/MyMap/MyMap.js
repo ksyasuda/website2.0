@@ -246,7 +246,7 @@ class MyMap extends Component {
 		} catch (err) {
 			alert(err)
 		}
-		console.log(response)
+		// console.log(response)
 		this.clearState()
 		let success = this.state.success
 		// success = <Success />;
