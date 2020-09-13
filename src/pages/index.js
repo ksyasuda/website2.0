@@ -108,6 +108,7 @@ class IndexPage extends Component {
 		return (
 			<Layout
 				height={"140vh"}
+				phoneHeight={"160vh"}
 				backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
 			>
 				{/* <div className={classes.HomeContainer}> */}

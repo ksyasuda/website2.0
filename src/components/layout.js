@@ -62,7 +62,7 @@ const Layout = ({
 	//* for laptop but probably not phone
 	if (
 		typeof window !== "undefined" &&
-		window.screen.height < 700 &&
+		window.screen.height < 800 &&
 		!isBlog
 	) {
 		console.log("height", window.screen.height)
@@ -81,9 +81,9 @@ const Layout = ({
 			...style,
 			backgroundImage: "",
 		}
-
+		console.log("phone height", phoneHeight)
 		if (phoneHeight !== undefined) {
-			console.log("hone height", phoneHeight)
+			console.log("phone height", phoneHeight)
 			style = {
 				...style,
 				height: phoneHeight,

@@ -10,7 +10,7 @@ export default function about() {
 		console.log(window.screen.height)
 	}
 	return (
-		<Layout height={"240vh"} phoneHeight={"340vh"} isBlog={true}>
+		<Layout height={"240vh"} phoneHeight={"340vh"} isBlog={false}>
 			<SEO
 				title='About-Me'
 				description='A page dedicated to all things about me including my personal life, my computer science background, my personal setup in terms of desktop setup, laptop setup, linux setup, etc'
