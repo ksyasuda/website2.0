@@ -21,7 +21,14 @@ import RedditIcon from "@material-ui/icons/Reddit"
 import CreateIcon from "@material-ui/icons/Create"
 import "./layout.css"
 
-const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
+const Layout = ({
+	children,
+	height,
+	id,
+	backgroundImg,
+	isBlog,
+	phoneHeight,
+}) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -43,7 +50,7 @@ const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
 		}
 	}
 
-	if (backgroundImg !== "") {
+	if (backgroundImg !== undefined) {
 		style = {
 			...style,
 			backgroundImage: backgroundImg,
@@ -55,10 +62,10 @@ const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
 	//* for laptop but probably not phone
 	if (
 		typeof window !== "undefined" &&
-		window.screen.height < 1000 &&
+		window.screen.height < 700 &&
 		!isBlog
 	) {
-		// console.log("height", window.screen.height)
+		console.log("height", window.screen.height)
 		// console.log("laptop")
 		style = {
 			...style,
@@ -69,9 +76,18 @@ const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
+		console.log("phone")
 		style = {
 			...style,
 			backgroundImage: "",
+		}
+
+		if (phoneHeight !== undefined) {
+			console.log("hone height", phoneHeight)
+			style = {
+				...style,
+				height: phoneHeight,
+			}
 		}
 	}
 
@@ -86,7 +102,7 @@ const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
 	}
 
 	// console.log(style)
-	// console.log("style", style)
+	console.log("style", style)
 	return (
 		<>
 			<Helmet>

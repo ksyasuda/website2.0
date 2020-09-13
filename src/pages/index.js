@@ -144,14 +144,8 @@ class IndexPage extends Component {
 					<div className={classes.Home2}>
 						<p className={classes.Excerpt}>
 							<span className={classes.CheckOutPosts}>
-								<ArrowDownwardIcon
-									style={{ position: "relative", top: "8px" }}
-								/>{" "}
-								Check out some of my recent posts here
-								<ArrowDownwardIcon
-									style={{ position: "relative", top: "8px" }}
-								/>
-							</span>{" "}
+								Check out some of my recent posts below
+							</span>
 						</p>
 						{this.state.posts.length > 0 ? this.state.posts : null}
 					</div>

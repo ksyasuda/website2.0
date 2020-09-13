@@ -12,3 +12,10 @@
 	position: relative;
 	left: 0px;
 }
+
+@media (max-width: 800px) {
+	.Japan {
+		width: 140px;
+		height: 140px;
+	}
+}

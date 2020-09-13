@@ -6,8 +6,11 @@ import Neofetch from "../components/neofetch"
 import JapanPic from "../components/JapanPic/JapanPic"
 
 export default function about() {
+	if (typeof window !== "undefined") {
+		console.log(window.screen.height)
+	}
 	return (
-		<Layout height={"150vh"}>
+		<Layout height={"240vh"} phoneHeight={"340vh"} isBlog={true}>
 			<SEO
 				title='About-Me'
 				description='A page dedicated to all things about me including my personal life, my computer science background, my personal setup in terms of desktop setup, laptop setup, linux setup, etc'
