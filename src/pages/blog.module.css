@@ -338,11 +338,11 @@
 }
 
 .AboutParagraph {
-	width: 90%;
+	width: 98%;
 	position: relative;
-	left: 3.8%;
+	left: -6px;
 	padding: 2px;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 @media (max-width: 800px) {
