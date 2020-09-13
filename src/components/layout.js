@@ -41,7 +41,7 @@ const Layout = ({
 	const onClickHandler = event => {
 		// console.log("click")
 	}
-	let style = { height: "120vh" }
+	let style = { height: height }
 	//! if a height for the layout is specified then apply the new height to style
 	if (height !== undefined) {
 		style = {
@@ -65,12 +65,12 @@ const Layout = ({
 		window.screen.height < 800 &&
 		!isBlog
 	) {
-		console.log("height", window.screen.height)
+		// console.log("height", window.screen.height)
 		// console.log("laptop")
 		style = {
 			...style,
 			backgroundImage: backgroundImg,
-			height: "300vh",
+			height: height,
 		}
 		// console.log("style", style)
 	}
