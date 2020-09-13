@@ -20,17 +20,19 @@ const blogPost = ({ data }) => {
 		window.screen.height <= 1080 &&
 		window.screen.height > 600
 	) {
+		console.log("laptop")
 		height = post.frontmatter.laptop_height
 	}
 
 	if (typeof window !== "undefined" && window.screen.width <= 600) {
+		console.log("width", window.screen.width)
 		// height = window.screen.height * 4 + "px"
 		height = post.frontmatter.phone_height
 	}
 	//   console.log("screen width", window.screen.width)
 	console.log(height)
 	return (
-		<Layout height={height} id='top-of-page'>
+		<Layout height={height} isBlog={true} id='top-of-page'>
 			<SEO
 				title={post.frontmatter.title}
 				description={post.frontmatter.description}

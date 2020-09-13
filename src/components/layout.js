@@ -21,7 +21,7 @@ import RedditIcon from "@material-ui/icons/Reddit"
 import CreateIcon from "@material-ui/icons/Create"
 import "./layout.css"
 
-const Layout = ({ children, height, id, backgroundImg }) => {
+const Layout = ({ children, height, id, backgroundImg, isBlog }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -34,14 +34,14 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 	const onClickHandler = event => {
 		// console.log("click")
 	}
-	let style
+	let style = { height: "120vh" }
 	//! if a height for the layout is specified then apply the new height to style
-	// if (height !== undefined) {
-	// 	style = {
-	// 		...style,
-	// 		height: height,
-	// 	}
-	// }
+	if (height !== undefined) {
+		style = {
+			...style,
+			height: height,
+		}
+	}
 
 	if (backgroundImg !== "") {
 		style = {
@@ -53,7 +53,11 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 		}
 	}
 	//* for laptop but probably not phone
-	if (typeof window !== "undefined" && window.screen.height < 1000) {
+	if (
+		typeof window !== "undefined" &&
+		window.screen.height < 1000 &&
+		!isBlog
+	) {
 		// console.log("height", window.screen.height)
 		// console.log("laptop")
 		style = {

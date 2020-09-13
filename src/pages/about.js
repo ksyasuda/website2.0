@@ -12,16 +12,6 @@ export default function about() {
 			/>
 			<div>
 				<h1>About Me</h1>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Beatae esse officiis autem commodi sint pariatur libero
-					sequi natus suscipit quibusdam quidem quasi est, molestiae
-					repellendus odit at alias. Est, debitis. Lorem ipsum dolor
-					sit amet consectetur adipisicing elit. In quisquam
-					architecto a nemo harum corrupti minus, laudantium rerum
-					eveniet ipsum aliquid! Magnam saepe libero earum in minus
-					ducimus voluptatum quae.
-				</p>
 				<Neofetch style={{ width: "60%", left: "20%" }} />
 			</div>
 		</Layout>
