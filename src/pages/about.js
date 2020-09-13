@@ -35,7 +35,7 @@ export default function about() {
 						first formal programming course, Honors C++. Since then,
 						I've taken at least one, typically two, computer science
 						courses per semester. That includes my Junior and Senior
-						years of High School, in which I took AP Java and Honors
+						years of High School where I took AP Java and Honors
 						Python respectively.
 					</p>
 					<p className={classes.AboutParagraph}>
@@ -74,19 +74,28 @@ export default function about() {
 						integrate into your own project. Another advantage of
 						having a large user base is that any problem you come
 						across is likely to have been seen and solved by someone
-						on the internet before. As a result, I spent the entire
-						summer learning about something in react like hooks or
-						API calls, then creating a small react app using what I
-						had learned. Eventually, I put it all together to create
-						this website, which is the culmination of three and a
-						half projects I worked on this summer (I will go into
-						more detail about why three and a half in a future blog
+						on the internet before.
+					</p>
+					<p className={classes.AboutParagraph}>
+						Once I made the decision to learn React, I followed a
+						simple process to incrementally learn something in
+						React, like props, hooks, or API calls, then creating a
+						small react app using what I had learned. I feel that
+						hands on experience building things using the concepts
+						and features that a large framework like React has
+						really helped me learn more than studying documentation.
+						Eventually, I put it all together to create this
+						website, which is the culmination of three and a half
+						projects I worked on this summer (I will go into more
+						detail about why three and a half in a future blog
 						post). I used the plethora of free material available
-						online to learn react as well as reading through the
-						official documentation, something that I became very
-						farmiliar with during this summer
+						online that teach you the concepts and provide conrecte
+						examples of the concepts in use, as well as reading
+						through the official documentation, which is something
+						that I still refrence frequently
 					</p>
 				</div>
+
 				{/* <Neofetch style={{ width: "60%", left: "20%" }} /> */}
 			</div>
 		</Layout>
