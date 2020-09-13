@@ -332,6 +332,19 @@
 	background-position: 0 96px;
 }
 
+.AboutContainer {
+	position: relative;
+	left: 20px;
+}
+
+.AboutParagraph {
+	width: 90%;
+	position: relative;
+	left: 3.8%;
+	padding: 2px;
+	font-size: 16px;
+}
+
 @media (max-width: 800px) {
 	.HomeContainer {
 		background-image: url("../images/sudasite2.gif");
