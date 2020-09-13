@@ -29,7 +29,9 @@ class Header extends Component {
 	render() {
 		const { siteTitle } = this.props
 		return (
-			<header>
+			<header
+				style={{ backgroundColor: "rebeccapurple", height: "95.834px" }}
+			>
 				<div
 					style={{
 						display: "flex",

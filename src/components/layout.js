@@ -48,21 +48,20 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 			...style,
 			backgroundImage: backgroundImg,
 			backgroundRepeat: "no-repeat",
-			backgroundPosition: "0 97px",
+			// backgroundPosition: "0 97px",
 			backgroundSize: "101% 120%",
 		}
 	}
 	//* for laptop but probably not phone
 	if (typeof window !== "undefined" && window.screen.height < 1000) {
-		console.log("height", window.screen.height)
-		console.log("laptop")
+		// console.log("height", window.screen.height)
+		// console.log("laptop")
 		style = {
 			...style,
 			backgroundImage: backgroundImg,
-			backgroundPosition: "0 90px",
 			height: "300vh",
 		}
-		console.log("style", style)
+		// console.log("style", style)
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
@@ -89,7 +88,7 @@ const Layout = ({ children, height, id, backgroundImg }) => {
 			<Helmet>
 				<link rel='icon' href={favicon} />
 			</Helmet>
-			<div style={style} id={id}>
+			<div style={style} id={id} className={classes.BigContainer}>
 				<Header
 					clicked={onClickHandler}
 					siteTitle={data.site.siteMetadata.title}

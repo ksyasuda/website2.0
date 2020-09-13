@@ -217,7 +217,6 @@
 .Home1 {
 	position: relative;
 	display: flex;
-	float: inline-start;
 	top: 20px;
 	/* background-color: black; */
 }
@@ -327,6 +326,10 @@
 	position: relative;
 	left: -65px;
 	top: -25px;
+}
+
+.BigContainer {
+	background-position: 0 96px;
 }
 
 @media (max-width: 800px) {
