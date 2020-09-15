@@ -334,9 +334,9 @@
 	top: -25px;
 }
 
-.BigContainer {
+/* .BigContainer {
 	background-position: 0 96px;
-}
+} */
 
 .AboutContainer {
 	position: relative;
@@ -356,6 +356,12 @@
 	background-repeat: no-repeat;
 	background-position: 0 97px;
 	background-size: 101% 120%;
+}
+
+@media (max-width: 1080px) {
+	.BigContainer {
+		background-size: 101% 150%;
+	}
 }
 
 @media (max-width: 800px) {
