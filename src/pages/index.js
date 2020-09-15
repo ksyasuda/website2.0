@@ -113,53 +113,59 @@ class IndexPage extends Component {
 			}
 		}
 		return (
-			<Layout
-				height={height}
-				phoneHeight={height}
-				backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
-			>
-				{/* <div className={classes.HomeContainer}> */}
-				<SEO title='Home' />
-				<div className={classes.HomeBody}>
-					<h1 className={classes.HomeTitle}>Welcome to Sudacode</h1>
-					{/*<p className={classes.HomeSubTitle}>
+			<div className={classes.BigContainer}>
+				<Layout
+					height={height}
+					phoneHeight={height}
+					backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
+				>
+					{/* <div className={classes.HomeContainer}> */}
+					<SEO title='Home' />
+					<div className={classes.HomeBody}>
+						<h1 className={classes.HomeTitle}>
+							Welcome to Sudacode
+						</h1>
+						{/*<p className={classes.HomeSubTitle}>
 						A Computer Science portfolio and blog that puts the{" "}
 						<strong>code</strong> in pseudocode
 					</p>*/}
-					<div className={classes.Home1}>
-						<div className={classes.Github}>
-							<p className={classes.GithubText}>
+						<div className={classes.Home1}>
+							<div className={classes.Github}>
+								<p className={classes.GithubText}>
+									<a
+										href='https://github.com/ksyasuda'
+										target='__blank'
+										rel='noreferrer'
+										className={classes.GithubText}
+									>
+										Click here or on the image to visit my
+										Github page to see more projects
+									</a>
+								</p>
 								<a
 									href='https://github.com/ksyasuda'
 									target='__blank'
 									rel='noreferrer'
-									className={classes.GithubText}
 								>
-									Click here or on the image to visit my
-									Github page to see more projects
+									<Github className={classes.GithubLink} />
 								</a>
+								{/* <Github /> */}
+							</div>
+						</div>
+						<div className={classes.Home2}>
+							<p className={classes.Excerpt}>
+								<span className={classes.CheckOutPosts}>
+									Check out some of my recent posts below
+								</span>
 							</p>
-							<a
-								href='https://github.com/ksyasuda'
-								target='__blank'
-								rel='noreferrer'
-							>
-								<Github className={classes.GithubLink} />
-							</a>
-							{/* <Github /> */}
+							{this.state.posts.length > 0
+								? this.state.posts
+								: null}
 						</div>
 					</div>
-					<div className={classes.Home2}>
-						<p className={classes.Excerpt}>
-							<span className={classes.CheckOutPosts}>
-								Check out some of my recent posts below
-							</span>
-						</p>
-						{this.state.posts.length > 0 ? this.state.posts : null}
-					</div>
-				</div>
-				{/* </div> */}
-			</Layout>
+					{/* </div> */}
+				</Layout>
+			</div>
 		)
 	}
 }

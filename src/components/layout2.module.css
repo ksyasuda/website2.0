@@ -1,0 +1,24 @@
+.BigContainer {
+	position: relative;
+	/* background-image: url("https://imgur.com/R2iKpHm.gif");
+	background-repeat: no-repeat;
+	background-position: 0 97px;
+	background-size: 101% 120%; */
+	/* background-color: rgb(211, 211, 211); */
+}
+
+.Links {
+	text-decoration: none;
+	color: dodgerblue;
+}
+
+.Links:hover {
+	color: green;
+}
+
+.Breadcrumbs {
+	padding: 10px;
+	position: relative;
+	top: 15px;
+	left: -14px;
+}

@@ -32,42 +32,45 @@ const blog = ({ data }) => {
 					)
 					let color = vcolors[random_num]
 					return (
-						<Link
-							key={node.id}
-							to={node.fields.slug}
-							style={{
-								backgroundColor: color,
-							}}
-							className={classes.link}
-						>
-							<div
-								key={node.id}
-								style={{ backgroundColor: color }}
-								className={classes.postContainer}
+						<div className={classes.PostsCont} key={node.id}>
+							<Link
+								to={node.fields.slug}
+								className={classes.link}
+								style={{
+									backgroundColor: color,
+								}}
 							>
-								<h3
-									className={classes.Title}
-									style={{ marginBottom: "2px" }}
+								<div
+									key={node.id}
+									style={{ backgroundColor: color }}
+									className={classes.postContainer}
 								>
-									{node.frontmatter.title}
-									{<br />}
-									<span
-										style={{
-											color: "black",
-											fontSize: "small",
-											textDecoration: "none",
-										}}
+									<h3
+										className={classes.Title}
+										style={{ marginBottom: "2px" }}
 									>
-										- {node.frontmatter.date} |{" "}
-										<span className={classes.Subject}>
-											{node.frontmatter.subject}
-										</span>{" "}
-									</span>
-									<hr className={classes.Line} />
-								</h3>
-								<p className={classes.Body}>{node.excerpt}</p>
-							</div>
-						</Link>
+										{node.frontmatter.title}
+										{<br />}
+										<span
+											style={{
+												color: "black",
+												fontSize: "small",
+												textDecoration: "none",
+											}}
+										>
+											- {node.frontmatter.date} |{" "}
+											<span className={classes.Subject}>
+												{node.frontmatter.subject}
+											</span>{" "}
+										</span>
+										<hr className={classes.Line} />
+									</h3>
+									<p className={classes.Body}>
+										{node.excerpt}
+									</p>
+								</div>
+							</Link>
+						</div>
 					)
 				})}
 			</div>

@@ -1,9 +1,15 @@
 .link {
+	position: relative;
 	text-decoration: none;
 	color: rgba(192, 97, 19, 0.945);
 	font-weight: bold;
 	font-size: x-large;
-	width: 80%;
+}
+
+.PostsCont {
+	width: 90%;
+	position: relative;
+	left: 5%;
 }
 
 .homelink {
@@ -54,15 +60,15 @@
 }
 
 .postContainer {
-	border: 1px solid black;
+	border: 2px solid black;
 	margin: 20px 0px 10px 0px;
 	box-sizing: border-box;
 	padding: 10px 10px 0px 10px;
 	border-radius: 22px;
 	margin-bottom: 3%;
-	width: 80%;
+	width: 100%;
 	position: relative;
-	left: 10%;
+	/* left: 10%; */
 }
 
 .postContainerHome {
@@ -343,6 +349,13 @@
 	left: -6px;
 	padding: 2px;
 	font-size: 18px;
+}
+
+.BigContainer {
+	background-image: url("https://imgur.com/R2iKpHm.gif");
+	background-repeat: no-repeat;
+	background-position: 0 97px;
+	background-size: 101% 120%;
 }
 
 @media (max-width: 800px) {

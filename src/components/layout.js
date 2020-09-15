@@ -15,7 +15,7 @@ import Breadcrumbs from "@material-ui/core/Breadcrumbs"
 import Button from "@material-ui/core/Button"
 import GitHubIcon from "@material-ui/icons/GitHub"
 import "./layout.css"
-import classes from "../pages/blog.module.css"
+import classes from "./layout2.module.css"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import RedditIcon from "@material-ui/icons/Reddit"
@@ -41,28 +41,26 @@ const Layout = ({
 	const onClickHandler = event => {
 		// console.log("click")
 	}
-	let style = { height: height }
+	// let style = { height: height }
 	//! if a height for the layout is specified then apply the new height to style
-
-	if (backgroundImg !== undefined) {
+	let style
+	if (backgroundImg === undefined) {
+		// console.log("no background")
+		style = {
+			backgroundColor: "rgb(211, 211, 211)",
+			height: height,
+		}
+	} else if (backgroundImg !== undefined) {
 		style = {
 			...style,
-			backgroundImage: backgroundImg,
-			backgroundRepeat: "no-repeat",
-			// backgroundPosition: "0 97px",
-			backgroundSize: "101% 120%",
+			backgroundColor: "none",
+			height: height,
 		}
 	}
 
 	if (typeof window !== "undefined" && window.screen.width < 700) {
-		// console.log("phone")
-		style = {
-			...style,
-			backgroundImage: "",
-		}
-		// console.log("phone height", phoneHeight)
+		// console.log("yup")
 		if (phoneHeight !== undefined) {
-			// console.log("inner if")
 			style = {
 				...style,
 				height: phoneHeight,
@@ -70,15 +68,41 @@ const Layout = ({
 		}
 	}
 
+	// if (backgroundImg !== undefined) {
+	// 	style = {
+	// 		...style,
+	// 		backgroundImage: backgroundImg,
+	// 		backgroundRepeat: "no-repeat",
+	// 		// backgroundPosition: "0 97px",
+	// 		backgroundSize: "101% 120%",
+	// 	}
+	// }
+
+	// if (typeof window !== "undefined" && window.screen.width < 700) {
+	// 	// console.log("phone")
+	// 	style = {
+	// 		...style,
+	// 		backgroundImage: "",
+	// 	}
+	// 	// console.log("phone height", phoneHeight)
+	// 	if (phoneHeight !== undefined) {
+	// 		// console.log("inner if")
+	// 		style = {
+	// 			...style,
+	// 			height: phoneHeight,
+	// 		}
+	// 	}
+	// }
+
 	//! if there is not a background image set then set the background color to the default
-	if (backgroundImg !== "") {
-		style = {
-			...style,
-			backgroundColor: "rgb(211, 211, 211)",
-			// backgroundColor: "rgb(49, 53, 61)",
-			// height: "200vh",
-		}
-	}
+	// if (backgroundImg !== "") {
+	// 	style = {
+	// 		...style,
+	// 		backgroundColor: "rgb(211, 211, 211)",
+	// 		// backgroundColor: "rgb(49, 53, 61)",
+	// 		// height: "200vh",
+	// 	}
+	// }
 
 	// console.log(style)
 	// console.log("style", style)

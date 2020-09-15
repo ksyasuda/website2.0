@@ -17,15 +17,16 @@ const blogPost = ({ data }) => {
 	// 	: null
 	if (
 		typeof window !== "undefined" &&
-		window.screen.height <= 1080 &&
+		window.screen.height < 1080 &&
 		window.screen.height > 600
 	) {
 		// console.log("laptop")
+		// console.log(window.screen.height)
 		height = post.frontmatter.laptop_height
 	}
 
 	if (typeof window !== "undefined" && window.screen.width <= 600) {
-		// console.log("width", window.screen.width)
+		// console.log("width", window.screen.width)s
 		// height = window.screen.height * 4 + "px"
 		height = post.frontmatter.phone_height
 	}
