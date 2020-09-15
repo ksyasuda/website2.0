@@ -1,8 +1,14 @@
-.Lat, .Lng {
+.Lat,
+.Lng {
 	color: red;
 }
 
 .Container {
 	font-size: x-large;
 	margin-bottom: 8%;
+	color: rgb(187, 138, 67);
+}
+
+.Divider {
+	color: black;
 }

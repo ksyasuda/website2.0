@@ -44,13 +44,14 @@ const Layout = ({
 	// let style = { height: height }
 	//! if a height for the layout is specified then apply the new height to style
 	let style
-	if (backgroundImg === undefined) {
+	if (!backgroundImg) {
 		// console.log("no background")
 		style = {
 			backgroundColor: "rgb(211, 211, 211)",
 			height: height,
 		}
-	} else if (backgroundImg !== undefined) {
+	} else if (backgroundImg) {
+		console.log("nice")
 		style = {
 			...style,
 			backgroundColor: "none",

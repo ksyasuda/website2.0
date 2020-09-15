@@ -258,7 +258,7 @@ class AllLocations extends Component {
 		let counter = 1
 		return (
 			<div id='map-container'>
-				<h2>All Locations</h2>
+				<h2 style={{ color: "rgb(187, 138, 67)" }}>All Locations</h2>
 				{typeof window !== "undefined" ? (
 					<LeafletMap
 						id='map'

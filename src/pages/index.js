@@ -107,7 +107,7 @@ class IndexPage extends Component {
 	render() {
 		return (
 			<div className={classes.BigContainer}>
-				<Layout backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}>
+				<Layout backgroundImg={true}>
 					{/* <div className={classes.HomeContainer}> */}
 					<SEO title='Home' />
 					<div className={classes.HomeBody}>

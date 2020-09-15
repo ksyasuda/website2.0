@@ -284,7 +284,9 @@ class MyMap extends Component {
 		// const position = [this.state.lat, this.state.lng];
 		return (
 			<div>
-				<h2 style={{ textAlign: "center" }}>Search/Find Locations</h2>
+				<h2 style={{ textAlign: "center", color: "rgb(187, 138, 67)" }}>
+					Search/Find Locations
+				</h2>
 				{typeof window !== "undefined" ? (
 					<LeafletMap
 						center={[this.state.lat, this.state.lng]}
@@ -349,7 +351,7 @@ class MyMap extends Component {
 						All Locations
 					</Button>
 				</div>
-				<h2 style={{ textAlign: "center" }}>
+				<h2 style={{ textAlign: "center", color: "rgb(187, 138, 67)" }}>
 					Or Search For A Location Below
 				</h2>
 				<form
@@ -386,6 +388,7 @@ class MyMap extends Component {
 						fontWeight: "bold",
 						fontSize: "larger",
 						textAlign: "center",
+						color: "rgb(132, 134, 114)",
 					}}
 				>
 					Latitude: <span id='lat'>{this.state.lat}</span>
@@ -395,6 +398,7 @@ class MyMap extends Component {
 						fontWeight: "bold",
 						fontSize: "larger",
 						textAlign: "center",
+						color: "rgb(132, 134, 114)",
 					}}
 				>
 					Longitude: <span id='lng'>{this.state.lng}</span>
