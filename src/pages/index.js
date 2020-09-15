@@ -105,20 +105,9 @@ class IndexPage extends Component {
 	}
 
 	render() {
-		let height = "160vh"
-		if (typeof window !== "undefined") {
-			if (window.screen.width < 700) {
-				height = "320vh"
-				// console.log("height", height)
-			}
-		}
 		return (
 			<div className={classes.BigContainer}>
-				<Layout
-					height={height}
-					phoneHeight={height}
-					backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}
-				>
+				<Layout backgroundImg={"url(https://imgur.com/R2iKpHm.gif)"}>
 					{/* <div className={classes.HomeContainer}> */}
 					<SEO title='Home' />
 					<div className={classes.HomeBody}>

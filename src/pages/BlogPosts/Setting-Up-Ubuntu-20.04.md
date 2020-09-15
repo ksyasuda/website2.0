@@ -4,7 +4,7 @@ date: "8/25/2020 | 12:46 AM"
 subject: "Setup"
 default_height: "1850vh"
 laptop_height: "2840vh"
-phone_height: "1785vh"
+phone_height: "1420vh"
 ---
 
 <style>
