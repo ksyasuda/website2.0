@@ -122,10 +122,10 @@ class IndexPage extends Component {
 				<SEO title='Home' />
 				<div className={classes.HomeBody}>
 					<h1 className={classes.HomeTitle}>Welcome to Sudacode</h1>
-					<p className={classes.HomeSubTitle}>
+					{/*<p className={classes.HomeSubTitle}>
 						A Computer Science portfolio and blog that puts the{" "}
 						<strong>code</strong> in pseudocode
-					</p>
+					</p>*/}
 					<div className={classes.Home1}>
 						<div className={classes.Github}>
 							<p className={classes.GithubText}>

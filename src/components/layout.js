@@ -14,12 +14,12 @@ import Header from "./header/header"
 import Breadcrumbs from "@material-ui/core/Breadcrumbs"
 import Button from "@material-ui/core/Button"
 import GitHubIcon from "@material-ui/icons/GitHub"
+import "./layout.css"
 import classes from "../pages/blog.module.css"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import RedditIcon from "@material-ui/icons/Reddit"
 import CreateIcon from "@material-ui/icons/Create"
-import "./layout.css"
 
 const Layout = ({
 	children,
