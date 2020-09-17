@@ -4,7 +4,7 @@ date: "8/25/2020 | 12:46 AM"
 subject: "Setup"
 default_height: "1850vh"
 laptop_height: "2840vh"
-phone_height: "1420vh"
+phone_height: "1500vh"
 ---
 
 <style>
@@ -13,26 +13,37 @@ phone_height: "1420vh"
 		position: relative;
 		left: 10%;
 	}
+	@media(max-width: 800px) {
+		.image {
+			width: 98%;
+			left: 1%;
+		}
+	}
 </style>
 
 ---
 
 <br/>
- 
-<h2>Introduction</h2>
+
+## Introduction
 
 I will be upgrading from my WSL 2 Ubuntu 18.04 LTS distro to the relatively newly released Ubuntu 20.04 LTS release and personalizing it to my liking
 
 For the personalization I will:
 
--   install zsh
--   set up my .zshrc
--   install oh-my-zsh
--   install zsh-syntax-highlighting and zsh-autosuggestions
--   install powerlevel10k
--   set up a p10k prompt
--   set up my custom .bashrc
--   add color to bash
+<!-- [link text](#abcd) -->
+
+<!-- -   <a href="#wsl2">install WSL 2</a> -->
+
+-   [install WSL 2](#wsl2)
+-   [install Ubuntu 20.04 LTS](#ubuntu2004)
+-   [install zsh](#install-zsh)
+-   [install oh-my-zsh](#install-ohmyzsh)
+-   [install zsh-syntax-highlighting and zsh-autosuggestions](#zsh-plugins)
+-   [install powerlevel10k](#powerlevel10k)
+-   [set up a p10k prompt](#p10k)
+-   [set up my custom .bashrc](#bashrc)
+-   [add color to bash](#color)
 
 <br/>
 
@@ -40,7 +51,7 @@ For the personalization I will:
 
 <br/>
 
-<h2>Installing WSL 2 (Skip if you already have WSL 2 enabled)</h2>
+## <a name="wsl2"></a>Installing WSL 2 (Skip if you already have WSL 2 enabled)
 
 In order to get WSL 2 working on your machine, you have to:
 
@@ -111,7 +122,7 @@ wsl --set-default-version 2
 
 <br/>
 
-<h2>Installing the Distro</h2>
+## <a name='ubuntu2004'></a>Installing the Distro</h2>
 
 Now is the time to download and install the distrubution of choice from the Microsoft Store
 
@@ -146,7 +157,7 @@ From there I am going to skip setting up bash for now and I will install my pref
 
 <br/>
 
-<h2>Installing Zsh</h2>
+## <a name="install-zsh"></a> Installing Zsh
 
 To install zsh, type: `sudo apt-get install zsh` then press enter
 
@@ -162,7 +173,7 @@ Press 'q' to quit and do nothing and you should be in a zsh shell denoted by a '
 
 <br/>
 
-<h2>Installing Oh My Zsh</h2>
+## <a name="install-ohmyzsh"></a>Installing Oh My Zsh
 
 One of the great features of zsh are the plugins such as zsh-syntax-highlighting and zsh auto-completion
 
@@ -184,7 +195,7 @@ Once that is done, Oh My Zsh will be installed
 
 <br/>
 
-<h2>Installing Zsh Plugins</h2>
+## <a name="zsh-plugins"></a>Installing Zsh Plugins
 
 Now to install <a href="https://github.com/zsh-users/zsh-autosuggestions">zsh-autosuggestions</a> and <a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>
 
@@ -238,7 +249,7 @@ After adding the plugin to your .zshrc and running `source ~/.zshrc`, you should
 
 <br/>
 
-<h2>Installing Powerlevel10k</h2>
+## <a name="powerlevel10k"></a>Installing Powerlevel10k
 
 Powerlevel10k is a Zsh theme with a lot of customization and flexibility that builds off an older project, Powerlevel9k and is compatible with all Powerlevel9k commands/configurations
 
@@ -256,7 +267,7 @@ Then set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
 
 And finally run `source ~/.zshrc` and the Powerlevel10k configuration screen should come up
 
-<img class="image" src="https://imgur.com/IJiTAry.png">
+<img id="p10k" class="image" src="https://imgur.com/IJiTAry.png">
 
 Go through the configuration screen choosing the options you want and press y to change your .zshrc at the end and save your configuration
 
@@ -274,7 +285,7 @@ In the end you should have something that looks like this:
 
 <br/>
 
-<h2>Setting up Bash</h2>
+## <a name="bashrc"></a>Setting up Bash
 
 Now that zsh is the default shell, in order to get into a bash shell you have to run the command: `bash`
 
@@ -348,7 +359,7 @@ Now you should see the custom prompt with the date, time, current directory, and
 
 <br/>
 
-<h2>Adding Color to ls Output</h2>
+## <a name="color"></a>Adding Color to ls Output
 
 By default the shell command `ls` outputs every file and directory in the current directory without color
 

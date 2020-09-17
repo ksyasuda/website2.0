@@ -258,7 +258,9 @@ class AllLocations extends Component {
 		let counter = 1
 		return (
 			<div id='map-container'>
-				<h2 style={{ color: "rgb(187, 138, 67)" }}>All Locations</h2>
+				<h2 style={{ textAlign: "center", color: "rgb(187, 138, 67)" }}>
+					All Locations
+				</h2>
 				{typeof window !== "undefined" ? (
 					<LeafletMap
 						id='map'
@@ -315,21 +317,17 @@ class AllLocations extends Component {
 					<Button
 						color='primary'
 						variant='contained'
-						className={classes.Button}
 						disabled={false}
-						style={{
-							position: "relative",
-							height: "40px",
-							width: "45%",
-							left: "9px",
-							color: "#e6761c",
-							fontWeight: "bold",
-							marginRight: "5px",
-							marginTop: "10px",
-							padding: "5px",
-						}}
+						className={classes.Button}
 						id='delete'
 						onClick={this.onRemoveDataHandler}
+						style={{
+							position: "relative",
+							color: "#e6761c",
+							fontWeight: "bold",
+							padding: "5px",
+							top: "5px",
+						}}
 					>
 						Delete all Data
 					</Button>

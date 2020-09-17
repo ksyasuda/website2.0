@@ -7,8 +7,22 @@
 	font-size: x-large;
 	margin-bottom: 8%;
 	color: rgb(187, 138, 67);
+	text-align: center;
 }
 
 .Divider {
 	color: black;
+}
+
+@media (max-width: 800px) {
+	.Divider {
+		display: none;
+	}
+	.LatitudeCont {
+		display: block;
+		margin-bottom: 20px;
+	}
+	.LongitudeCont {
+		display: block;
+	}
 }

@@ -296,7 +296,7 @@ class MyMap extends Component {
 							position: "relative",
 							left: "10%",
 							border: "1px solid hotpink",
-							zIndex: "200",
+							zIndex: "100",
 						}}
 						className={classes.Mapp}
 					>

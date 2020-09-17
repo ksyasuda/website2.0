@@ -57,7 +57,7 @@ const blogPost = ({ data }) => {
 						{/* to Blog */}
 					</Link>
 				</div>
-				<div className={classes.toTheTop}>
+				{/* <div className={classes.toTheTop}>
 					<Link to='#top-of-page' className={classes.toTheTop}>
 						<Fab
 							color='primary'
@@ -71,7 +71,7 @@ const blogPost = ({ data }) => {
 							Top
 						</Fab>
 					</Link>
-				</div>
+				</div> */}
 				<h1 className={classes.title}>{post.frontmatter.title}</h1>
 				<div
 					className={classes.blogPost}

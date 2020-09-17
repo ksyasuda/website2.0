@@ -15,6 +15,7 @@ const blog = ({ data }) => {
 	const PINK = "#f018af"
 	const PURPLE = "#9609bd"
 	const vcolors = [RED, ORANGE, YELLOW, GREEN, BLUE, PINK, PURPLE]
+	let lastColor = null
 	return (
 		<Layout height='180vh'>
 			<SEO
@@ -31,6 +32,13 @@ const blog = ({ data }) => {
 						Math.random() * Math.floor(vcolors.length)
 					)
 					let color = vcolors[random_num]
+					while (lastColor && lastColor === color) {
+						random_num = Math.floor(
+							Math.random() * Math.floor(vcolors.length)
+						)
+						color = vcolors[random_num]
+					}
+					lastColor = color
 					return (
 						<div className={classes.PostsCont} key={node.id}>
 							<Link

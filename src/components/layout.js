@@ -51,7 +51,7 @@ const Layout = ({
 			height: height,
 		}
 	} else if (backgroundImg) {
-		console.log("nice")
+		// console.log("nice")
 		style = {
 			...style,
 			backgroundColor: "none",
