@@ -3,7 +3,7 @@ title: "Installing Arch Linux on my Old Laptop"
 date: "9/13/2020 11:35 AM"
 subject: "Setup"
 default_height: "1050vh"
-laptop_height: "1400vh"
+laptop_height: "1500vh"
 phone_height: "1800vh"
 ---
 
@@ -37,6 +37,8 @@ _This is not meant to be an installation guide, but rather an account of my expe
 8. [Mount the file system](#mount)
 9. [Configure Arch](#configure-arch)
 10. [Installing Grub](#grub)
+11. [Setting up a sudo user](#sudouser)
+12. [Installing KDE Plasma](#kde)
 
 <br />
 
@@ -272,6 +274,98 @@ To create a root password run `passwd` and enter in a password.
 <br />
 
 ## Installing GRUB Bootloader <a name="grub"></a>
+
+Next I installed the [GRUB
+bootloader](https://wiki.archlinux.org/index.php/GRUB) and a package needed for
+UEFI systems with pacman -S grub efibootmgr
+
+Run `mkdir /boot/efi` to create the directory for the EFI partition
+
+Next mount the partition to the created directory with `mount /dev/sda1 /boot/efi`
+
+To install grub run this command:
+
+```bash
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
+```
+
+Finally, run `grub-mkconfig -o /boot/grub/grub.cfg` to generate the
+configuration for GRUB
+
+<br />
+
+---
+
+<br />
+
+## Setting up a sudo user <a name="sudouser"></a>
+
+I chose to install KDE Plasma as my desktop environment and in order to use KDE,
+you must create a user that is not root.
+
+Run the command `useradd -m sudacode` to create a new user named sudacode with a
+named home directory.
+
+Then run `passwd sudacode` and enter in a password for the new user.
+
+Next use the command `EDITOR=vim visudo` and uncomment the line that has `%wheel ALL=(ALL) ALL` to allow members of the wheel group to execute any command.
+
+<style>
+	img[src*="#sudoers"] {
+		position: relative;
+		left: 60px;
+	}
+</style>
+
+![](https://i.imgur.com/m5xpc0r.png#sudoers)
+
+Finally, add the new user to the wheel group with `usermod -G wheel sudacode`.
+
+Now reboot and login as the new user instead of the root user.
+
+<br />
+
+---
+
+<br />
+
+## Installing KDE Plasma <a name="kde"></a>
+
+Now to install the KDE Plasma desktop environment.
+
+First we have to install some packages with:
+```bash
+sudo pacman -S xorg plasma plasma-wayland-session kde-applications
+```
+
+Once installed, enable both the display manager and network manager with
+[systemd](https://wiki.archlinux.org/index.php/systemd):
+
+
+```bash
+systemctl enable sddm.service
+systemctl enable NetworkManager.service
+```
+
+Now run `sudo reboot` and you should be at the KDE login screen.
+
+If, like me, you don't want to boot into KDE immediately and instead boot into
+the Arch console, reboot the computer and wait for the GRUB menu to come up.
+
+Run the command `sudo systemctl set-default multi-user.target` to make your
+system always boot to the console.
+
+This command puts the default systemd target into text mode.  If you don't know
+your default systemd target run `systemctl get-default`.
+
+To undo this change and always boot into KDE, run `sudo systemctl set-default
+graphical.target`.
+
+After doing either of these commands, run `sudo reboot` to complete the changes.
+
+And with that, Arch Linux with KDE Plasma has successfully been installed
+
+![KDE Plasma](https://i.imgur.com/NvytMF4.jpg)
 
 <br />
 
