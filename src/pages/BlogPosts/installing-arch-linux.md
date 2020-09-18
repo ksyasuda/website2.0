@@ -27,19 +27,19 @@ _This is not meant to be an installation guide, but rather an account of my expe
 
 ## Sections
 
-- [Sections](#sections)
-- [Downloading the ISO <a name="download-iso"></a>](#downloading-the-iso-)
-- [Creating a live USB <a name="create-usb"></a>](#creating-a-live-usb-)
-- [Booting from the newly created live USB <a name="boot-usb"></a>](#booting-from-the-newly-created-live-usb-)
-- [Partitioning the Disk <a name="partition-disk"></a>](#partitioning-the-disk-)
-- [Creating the File System <a name="create-filesys"></a>](#creating-the-file-system-)
-- [Connecting to WiFi <a name="wifi"></a>](#connecting-to-wifi-)
-- [Select the Arch mirrors <a name="mirrors"></a>](#select-the-arch-mirrors-)
-- [Mount the file system <a name="mount"></a>](#mount-the-file-system-)
-- [Configure Arch <a name="configure-arch"></a>](#configure-arch-)
-- [Installing GRUB Bootloader <a name="grub"></a>](#installing-grub-bootloader-)
-- [Setting up a sudo user <a name="sudouser"></a>](#setting-up-a-sudo-user-)
-- [Installing KDE Plasma <a name="kde"></a>](#installing-kde-plasma-)
+-   [Sections](#sections)
+-   [Downloading the ISO](#downloading-the-iso-)
+-   [Creating a live USB](#creating-a-live-usb-)
+-   [Booting from the newly created live USB](#booting-from-the-newly-created-live-usb-)
+-   [Partitioning the Disk](#partitioning-the-disk-)
+-   [Creating the File System](#creating-the-file-system-)
+-   [Connecting to WiFi](#connecting-to-wifi-)
+-   [Select the Arch mirrors](#select-the-arch-mirrors-)
+-   [Mount the file system](#mount-the-file-system-)
+-   [Configure Arch](#configure-arch-)
+-   [Installing GRUB Bootloader](#installing-grub-bootloader-)
+-   [Setting up a sudo user](#setting-up-a-sudo-user-)
+-   [Installing KDE Plasma](#installing-kde-plasma-)
 
 <br />
 
@@ -63,7 +63,7 @@ I used an online tool to extract the ISO from the torrent.
 
 ## Creating a live USB <a name="create-usb"></a>
 
-I used the GUI tool [Etcher](https://www.balena.io/etcher/) to create the live USB.
+I used the GUI tool [Etcher](https://www.balena.io/etcher/ "Etcher homepage") to create the live USB.
 
 ![etcher gif](https://imgur.com/gAlzWI0.gif)
 
@@ -148,7 +148,7 @@ Once done, run the `w` command to write the changes to the disk and then exit ou
 
 Now that the disk is partitioned, we have to create the file system.
 
-First, create a [FAT32 file system](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32) using this command:
+First, create a [FAT32 file system](https://en.wikipedia.org/wiki/File_Allocation_Table#FAT32 "FAT wikipedia") using this command:
 
 ```bash
 mkfs.fat -F32 /dev/sda1
@@ -168,7 +168,7 @@ mkfs.ext4 /dev/sda2
 
 ## Connecting to WiFi <a name="wifi"></a>
 
-Next, use [iwctl](https://wiki.archlinux.org/index.php/Iwd#iwctl) to authenticate to the wireless network.
+Next, use [iwctl](https://wiki.archlinux.org/index.php/Iwd#iwctl "iwctl wiki page") to authenticate to the wireless network.
 
 Run `iwctl` to bring up the iwctl prompt.
 
@@ -180,7 +180,7 @@ To list all networks found in the previous step run `station [device] get-networ
 
 Finally, connect to your network with: `station [device] connect SSID`, where SSID is the name of your network.
 
-Then configure the network with [dhcpcd](https://wiki.archlinux.org/index.php/Dhcpcd) using the default configurations.
+Then configure the network with [dhcpcd](https://wiki.archlinux.org/index.php/Dhcpcd "dhcpcd wiki page") using the default configurations.
 
 Once completed, run `ping www.google.com` and it should respond if the WiFi was set up correctly
 
@@ -192,7 +192,7 @@ Once completed, run `ping www.google.com` and it should respond if the WiFi was 
 
 ## Select the Arch mirrors <a name="mirrors"></a>
 
-For this step, I used [Reflector](https://wiki.archlinux.org/index.php/Reflector) to select the best Arch mirrors, sorted by speed, and overwrite the file at `/etc/pacman.d/mirrorlist`.
+For this step, I used [Reflector](https://wiki.archlinux.org/index.php/Reflector "Reflector wiki page") to select the best Arch mirrors, sorted by speed, and overwrite the file at `/etc/pacman.d/mirrorlist`.
 
 First, run `pacman -Syy` so sync the pacman repo so that you can Reflector.
 
@@ -276,9 +276,7 @@ To create a root password run `passwd` and enter in a password.
 
 ## Installing GRUB Bootloader <a name="grub"></a>
 
-Next I installed the [GRUB
-bootloader](https://wiki.archlinux.org/index.php/GRUB) and a package needed for
-UEFI systems with pacman -S grub efibootmgr
+Next I installed the [GRUB bootloader](https://wiki.archlinux.org/index.php/GRUB "GRUB wiki page") and a package needed for UEFI systems with pacman -S grub efibootmgr
 
 Run `mkdir /boot/efi` to create the directory for the EFI partition
 
@@ -341,7 +339,7 @@ sudo pacman -S xorg plasma plasma-wayland-session kde-applications
 ```
 
 Once installed, enable both the display manager and network manager with
-[systemd](https://wiki.archlinux.org/index.php/systemd):
+[systemd](https://wiki.archlinux.org/index.php/systemd "systemd wiki page"):
 
 ```bash
 systemctl enable sddm.service
@@ -366,7 +364,3 @@ After doing either of these commands, run `sudo reboot` to complete the changes.
 And with that, Arch Linux with KDE Plasma has successfully been installed
 
 ![KDE Plasma](https://i.imgur.com/NvytMF4.jpg)
-
-<br />
-
----
