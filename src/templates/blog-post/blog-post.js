@@ -25,7 +25,7 @@ const blogPost = ({ data }) => {
 		height = post.frontmatter.laptop_height
 	}
 
-	if (typeof window !== "undefined" && window.screen.width <= 600) {
+	if (typeof window !== "undefined" && window.screen.width < 600) {
 		// console.log("width", window.screen.width)s
 		// height = window.screen.height * 4 + "px"
 		height = post.frontmatter.phone_height
