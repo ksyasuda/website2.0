@@ -3,7 +3,7 @@ title: "Installing Arch Linux on my Old Laptop"
 date: "9/13/2020 11:35 AM"
 subject: "Setup"
 default_height: "1050vh"
-laptop_height: "1650vh"
+laptop_height: "1500vh"
 phone_height: "1800vh"
 ---
 
@@ -334,13 +334,13 @@ Now reboot and login as the new user instead of the root user.
 Now to install the KDE Plasma desktop environment.
 
 First we have to install some packages with:
+
 ```bash
 sudo pacman -S xorg plasma plasma-wayland-session kde-applications
 ```
 
 Once installed, enable both the display manager and network manager with
 [systemd](https://wiki.archlinux.org/index.php/systemd):
-
 
 ```bash
 systemctl enable sddm.service
@@ -355,11 +355,10 @@ the Arch console, reboot the computer and wait for the GRUB menu to come up.
 Run the command `sudo systemctl set-default multi-user.target` to make your
 system always boot to the console.
 
-This command puts the default systemd target into text mode.  If you don't know
+This command puts the default systemd target into text mode. If you don't know
 your default systemd target run `systemctl get-default`.
 
-To undo this change and always boot into KDE, run `sudo systemctl set-default
-graphical.target`.
+To undo this change and always boot into KDE, run `sudo systemctl set-default graphical.target`.
 
 After doing either of these commands, run `sudo reboot` to complete the changes.
 
