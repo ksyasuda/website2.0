@@ -275,6 +275,7 @@ class AllLocations extends Component {
 							position: "relative",
 							left: "10%",
 							border: "1px solid hotpink",
+							zIndex: "100"
 						}}
 					>
 						<TileLayer
