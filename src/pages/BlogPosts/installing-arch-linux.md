@@ -13,7 +13,7 @@ phone_height: "1800vh"
 
 <h2>Introduction</h2>
 
-At the start of my Junior year at the University of Michigan, I had to to upgrade my 5 year old laptop as the laptop that I was using at the time would only last about 45 minutes on battery.  That laptop had been sitting in my closet for the past year until this summer when I brought it home with me and installed Arch Linux
+At the start of my Junior year at the University of Michigan, I had to to upgrade my 5 year old laptop as the laptop that I was using at the time would only last about 45 minutes on battery. That laptop had been sitting in my closet for the past year until this summer when I brought it home with me and installed Arch Linux
 
 _This is not meant to be an installation guide, but rather an account of my experience during setup and customization._
 
@@ -25,19 +25,18 @@ _This is not meant to be an installation guide, but rather an account of my expe
 
 ## Sections
 
-- [Sections](#sections)
-- [Downloading the ISO <a name="download-iso"></a>](#downloading-the-iso-)
-- [Creating a live USB <a name="create-usb"></a>](#creating-a-live-usb-)
-- [Booting from the newly created live USB <a name="boot-usb"></a>](#booting-from-the-newly-created-live-usb-)
-- [Partitioning the Disk <a name="partition-disk"></a>](#partitioning-the-disk-)
-- [Creating the File System <a name="create-filesys"></a>](#creating-the-file-system-)
-- [Connecting to WiFi <a name="wifi"></a>](#connecting-to-wifi-)
-- [Select the Arch mirrors <a name="mirrors"></a>](#select-the-arch-mirrors-)
-- [Mount the file system <a name="mount"></a>](#mount-the-file-system-)
-- [Configure Arch <a name="configure-arch"></a>](#configure-arch-)
-- [Installing GRUB Bootloader <a name="grub"></a>](#installing-grub-bootloader-)
-- [Setting up a sudo user <a name="sudouser"></a>](#setting-up-a-sudo-user-)
-- [Installing KDE Plasma <a name="kde"></a>](#installing-kde-plasma-)
+-   [Downloading the ISO](#download-iso)
+-   [Creating a live USB](#create-usb)
+-   [Booting from the newly created live USB](#boot-usb)
+-   [Partitioning the Disk](#partition-disk)
+-   [Creating the File System](#create-filesys)
+-   [Connecting to WiFi](#wifi)
+-   [Select the Arch mirrors](#mirrors)
+-   [Mount the file system](#mount)
+-   [Configure Arch](#configure-arch)
+-   [Installing GRUB Bootloader](#grub)
+-   [Setting up a sudo user](#sudouser)
+-   [Installing KDE Plasma](#kde)
 
 <br />
 
@@ -217,7 +216,7 @@ Now that the file system is mounted, we have to install all essential packages (
 
 Run `pacstrap /mnt base linux linux-firmware vim nano man-db man-pages texinfo base-devel` to install essential packages like linux and some non-essential but important packages like vim (text editor) and man-pages (documentation for linux commands)
 
-***Now to configure Arch:***
+**_Now to configure Arch:_**
 
 First we create a fstab file to define how the partition is mounted into file system
 
@@ -300,6 +299,7 @@ named home directory
 Then run `passwd sudacode` and enter in a password for the new user
 
 Next use the command `EDITOR=vim visudo` and uncomment the line that has `%wheel ALL=(ALL) ALL` to allow members of the wheel group to execute any command
+
 <style>
 	img[src*="#sudoers"] {
 		position: relative;
