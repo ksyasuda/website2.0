@@ -2,9 +2,9 @@
 title: "Building this website"
 date: "9/21/20 12:15 AM"
 subject: "Showcase"
-default_height: "1800vh"
-laptop_height: "2000vh"
-phone_height: "2400vh"
+default_height: "2200vh"
+laptop_height: "2500vh"
+phone_height: "2900vh"
 ---
 
 ## Introduction
@@ -214,3 +214,48 @@ Here is what the `templates/blog-post.js` looks like:
 ![template-1](https://imgur.com/fhXb2Ju.png)
 ![template-2](https://imgur.com/xCkQBLI.png)
 ![template-3](https://imgur.com/x4srYNi.png)
+
+At this point, I had my website/blog in one project and the React Travel App in
+another project.  The next step was to consolidate both projects into one and
+create a travel page on my website.
+
+<br />
+
+---
+
+<br />
+
+## Integrating my React Travel App into my Website <a name="website2.0"></a>
+
+I decided to change the website here from version 1 to version 2 becuase it was at this
+point where I discovered Material-ui, which I found much easier to use and to
+use sparingly when compared to components from React Bootstrap.  Once I found
+Material-ui, I decided to modify my website to utilize Material-ui components
+and icons as well integrate the travel app
+
+Becuase the React Travel App is written in React and utilizes two class-based containers
+for the two pages of the application, I came to the decision to make a 
+copy of the two containers on  my website filesystem and create two separate pages
+that return the components themselves as seen in the image below.  Of course I
+would also have to copy over any other components that are used in the
+containers as well
+
+![travel-page](https://i.imgur.com/nyVvoY8.png)
+
+The only problem I encountered was that React Leaflet does not work natively in
+Gatsby.js. Luckily, the [gatsby-plugin-react-leaflet exists](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-leaflet/ "Gatsby Plugin React Leaflet Documentation").  After installing it with `yarn`
+and adding the following lines to the `gatsby-config.js`, React Leaflet began working as
+intended and the integration into my website was complete
+
+```JavaScript
+{
+	resolve: 'gatsby-plugin-react-leaflet',
+	options: {
+    	linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+    }
+}
+```
+
+<br />
+
+---
