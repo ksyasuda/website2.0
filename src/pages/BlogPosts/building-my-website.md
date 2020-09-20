@@ -1,9 +1,9 @@
 ---
-title: "Building this website"
-date: "9/21/20 12:15 AM"
+title: "Building This Website"
+date: "9/20/20 12:15 AM"
 subject: "Showcase"
-default_height: "2200vh"
-laptop_height: "2500vh"
+default_height: "2000vh"
+laptop_height: "2200vh"
 phone_height: "2900vh"
 ---
 
