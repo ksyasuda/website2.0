@@ -11,8 +11,8 @@ export default function about() {
 	}
 	return (
 		<Layout
-			height={"240vh"}
-			phoneHeight={"340vh"}
+			height={"350vh"}
+			phoneHeight={"450vh"}
 			isBlog={false}
 			backgroundImg={false}
 		>
@@ -102,6 +102,32 @@ export default function about() {
 						through the official documentation, which is something
 						that I still refrence frequently
 					</p>
+				</div>
+				<hr />
+				<p style={{ display: "block", textAlign: "center" }}>
+					Check out my wakatime profile here
+				</p>
+				<div className={classes.WakaTime}>
+					<a
+						href='https://wakatime.com'
+						rel='noreferrer'
+						target='_blank'
+					>
+						<img
+							src='https://wakatime.com/share/@cb761320-ecf4-4a76-a931-6d29dae94b27/7498581f-3aec-4a41-8f59-9775cef05932.png'
+							className={classes.WakaImg}
+						/>
+					</a>
+					<a
+						href='https://wakatime.com'
+						rel='noreferrer'
+						target='_blank'
+					>
+						<img
+							src='https://wakatime.com/share/@cb761320-ecf4-4a76-a931-6d29dae94b27/87b67da8-41f0-4254-9948-052d383cd27d.png'
+							className={classes.WakaImg}
+						/>
+					</a>
 				</div>
 
 				{/* <Neofetch style={{ width: "60%", left: "20%" }} /> */}

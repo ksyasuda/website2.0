@@ -209,15 +209,15 @@
 	background-color: #908774;
 	position: relative;
 	width: 40%;
-	margin-bottom: 4%;
+	margin-bottom: 2%;
 	position: relative;
 	/* top: -250px; */
 	border-radius: 15px;
-	padding: 5px;
+	padding: 2px;
 	float: right;
 	align-self: flex-end;
 	/* left: 75.5%; */
-	top: -15px;
+	top: 0px;
 }
 
 .Home1 {
@@ -330,8 +330,8 @@
 
 .CheckOutPosts {
 	position: relative;
-	left: -75px;
-	top: -25px;
+	left: -80px;
+	top: -10px;
 }
 
 /* .BigContainer {
@@ -356,6 +356,14 @@
 	background-repeat: no-repeat;
 	background-position: 0 96px;
 	background-size: 101% 120%;
+}
+
+.WakaTime {
+	display: flex;
+}
+
+.WakaImg {
+	padding: 5px;
 }
 
 @media (max-width: 1080px) {

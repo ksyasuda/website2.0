@@ -2,8 +2,8 @@
 title: "Building This Website"
 date: "9/20/20 12:15 AM"
 subject: "Showcase"
-default_height: "2000vh"
-laptop_height: "2200vh"
+default_height: "2050vh"
+laptop_height: "2250vh"
 phone_height: "2900vh"
 ---
 
@@ -19,13 +19,13 @@ This past summer I decided to take a break from C/C++, the languages that I had 
 
 ## Sections
 
-<!-- 1. [Learning HTML, CSS, JavaScript, and Node.js](#basics)
+1. [Learning HTML, CSS, JavaScript, and Node.js](#basics)
 2. [Building a Travel App with a Node.js Backend](#vanilla-travelapp)
 3. [Learning React](#learn-react)
 4. [Porting the app to React](#react)
 5. [Attempting to Build my Website](#first-attempts)
 6. [Gatsby Website 1.0](#first-website)
-7. [Integrating my React Travel App Into my Website](#website2.0) -->
+7. [Integrating my React Travel App Into my Website](#website2.0)
 
 <br />
 
@@ -241,6 +241,7 @@ would also have to copy over any other components that are used in the
 containers as well
 
 ![travel-page](https://i.imgur.com/nyVvoY8.png)
+<p style="text-align: center; font-size: 14px;">I integrated the Map container straight into my travel page</p>
 
 The only problem I encountered was that React Leaflet does not work natively in
 Gatsby.js. Luckily, the [gatsby-plugin-react-leaflet exists](https://www.gatsbyjs.com/plugins/gatsby-plugin-react-leaflet/ "Gatsby Plugin React Leaflet Documentation").  After installing it with `yarn`
