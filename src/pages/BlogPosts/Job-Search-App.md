@@ -2,9 +2,9 @@
 title: "Job Search App (C++)"
 date: "9/24/2020 10:35 PM"
 subject: "Showcase"
-default_height: "400vh"
-laptop_height: "500vh"
-phone_height: "750vh"
+default_height: "1000vh"
+laptop_height: "1200vh"
+phone_height: "1500vh"
 ---
 
 ## Introduction
@@ -26,9 +26,9 @@ the map data structure in C++.
 
 1. [The plan](#the-plan)
 2. [Parse Command-line Arguments](#parse-args)
-3. [Creating the Job class](#job-class)
-4. [Reading from the input file](#reading-input)
-5. [Writing to the file](#write-file)
+3. [Creating the Job Class](#job-class)
+4. [Reading from the Input File](#reading-input)
+5. [Writing to the File](#write-file)
 6. [Setting up XOR Cryptography](#write-my-own-crypto)
 7. [Adding Encryption/Decryption to File Write](#integrate-crypto)
 8. [Fixing the Print, Insert, and Search Commands](#fix-commands)
@@ -107,6 +107,45 @@ Optarg is a C-string that can be casted to a C++ style string and then further p
 
 ## Creating the Job Class <a name="job-class"></a>
 
+I decided to create a Job class, which contains 4 strings for each section of the input and a print function.
+
+![job.cpp img](https://i.imgur.com/xkdtBRw.png)
+
+The jobs are created through a custom constructor and then are available through the public getter functions.
+
+![job.cpp pring function](https://i.imgur.com/QzWYPdY.png)
+
+The Job class also has a custom print function that prints out the content of the Job in a formatted way. The parts of the code dealing with encryption will be talked about later.
+
 <br />
 
 ---
+
+<br />
+
+## Reading From The Input File <a name="reading-input"></a>
+
+For reading from an input file, I used the [`fstream`](http://www.cplusplus.com/reference/fstream/fstream/ "fstream c++ refrence page") C++ library.
+
+![reading input](https://i.imgur.com/dnR56ME.png)
+
+The line with
+
+```c++
+while(std::getline(in, line)) {
+	Job job = parseString(line);
+	map[job.get_company()] = job;
+}
+```
+
+does a `getline()` until an EOF character or the the end of the file is reached.
+
+The `parseString()` function, as its name suggests, parses the specially formatted string from the input file.
+
+![parseString() function](https://i.imgur.com/yWTJBUJ.png)
+
+The funtion starts from the beginning of each line in the file and searches for a '|' character. When it finds the '|', it returns the position of the found character or `std::string::npos` if not found. With the location of the '|', I created a substring of the line from the beginning to the '|'.
+
+Then, to parse the rest of the string and to reuse variables, I set `count` to `pos + 1` and reuse `pos` in the next `.find()` call.
+
+The reason I set `count` to `pos + 1` is becuase pos refers to the index of the found '|' character and to find the next section of the input, we want to begin the search on the character after the '|'.
