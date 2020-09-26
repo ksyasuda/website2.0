@@ -11,7 +11,7 @@ phone_height: "750vh"
 
 In the past, when trying to keep track of internships that I had applied to, I
 had always used Excel even though I have a very basic understanding of how to
-use Excel.  That's why this year, I decided to write a program to do it for me.
+use Excel. That's why this year, I decided to write a program to do it for me.
 I decided to write this in C++ and create a command-line application as opposed
 to creating a web application in React because I wanted simplicity, speed, and
 the map data structure in C++.
@@ -29,6 +29,9 @@ the map data structure in C++.
 3. [Creating the Job class](#job-class)
 4. [Reading from the input file](#reading-input)
 5. [Writing to the file](#write-file)
+6. [Setting up XOR Cryptography](#write-my-own-crypto)
+7. [Adding Encryption/Decryption to File Write](#integrate-crypto)
+8. [Fixing the Print, Insert, and Search Commands](#fix-commands)
 
 <br />
 
@@ -45,7 +48,7 @@ the job objects to a C++ Map, using the company name as the keys.
 
 This allows me to search for any job that I have already applied to by searchin
 g the Map for the company name, and a result can be found in constant time
-regardless of the size of the map.  For the same reason, I am also able to
+regardless of the size of the map. For the same reason, I am also able to
 easily keep track of the number of jobs that I have applied to as the Map data
 structure keeps track of its own size for a constant time .size() operation.
 
@@ -59,8 +62,7 @@ structure keeps track of its own size for a constant time .size() operation.
 
 The first step of the program was parsing command-line arguments.
 
-For this I used [getopt](https://man7.org/linux/man-pages/man3/getopt.3.html
-"getopt man page"), which is a program, written in C, for handling command-line
+For this I used [getopt](https://man7.org/linux/man-pages/man3/getopt.3.html "getopt man page"), which is a program, written in C, for handling command-line
 arguments.
 
 First, I created the longOpts struct, which defines all the valid command-line
@@ -94,6 +96,16 @@ while ((option = getopt_long(argc, argv, "vpi:hs:c", longOpts, &option_index))
 	}
 }
 ```
+
+Optarg is a C-string that can be casted to a C++ style string and then further parsed or used in the program.
+
+<br />
+
+---
+
+<br />
+
+## Creating the Job Class <a name="job-class"></a>
 
 <br />
 
