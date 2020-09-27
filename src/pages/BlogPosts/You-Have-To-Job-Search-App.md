@@ -1,5 +1,5 @@
 ---
-title: "Job Search App (C++)"
+title: "You-Have-To Job Search Application (C++)"
 date: "9/24/2020 10:35 PM"
 subject: "Showcase"
 default_height: "2000vh"
