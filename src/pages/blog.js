@@ -16,8 +16,11 @@ const blog = ({ data }) => {
 	const PURPLE = "#9609bd"
 	const vcolors = [RED, ORANGE, YELLOW, GREEN, BLUE, PINK, PURPLE]
 	let lastColor = null
+	let numPosts = data.allMarkdownRemark.edges.length
+	let height = 50 * numPosts + 5 * numPosts
+	height = height + "vh"
 	return (
-		<Layout height='180vh'>
+		<Layout height={height}>
 			<SEO
 				title='Blog'
 				description='A blog where I can showcase my personal projects, showcase my setup, and talk about interesting topics in computer science and technology'

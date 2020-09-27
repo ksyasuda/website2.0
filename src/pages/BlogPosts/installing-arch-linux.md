@@ -3,7 +3,7 @@ title: "Installing Arch Linux on my Old Laptop"
 date: "9/13/2020 11:35 AM"
 subject: "Setup"
 default_height: "1050vh"
-laptop_height: "1800vh"
+laptop_height: "1900vh"
 phone_height: "1800vh"
 ---
 
@@ -25,19 +25,19 @@ _This is not meant to be an installation guide, but rather an account of my expe
 
 ## Sections
 
-- [Sections](#sections)
-- [Downloading the ISO <a name="download-iso"></a>](#downloading-the-iso-)
-- [Creating a live USB <a name="create-usb"></a>](#creating-a-live-usb-)
-- [Booting from the newly created live USB <a name="boot-usb"></a>](#booting-from-the-newly-created-live-usb-)
-- [Partitioning the Disk <a name="partition-disk"></a>](#partitioning-the-disk-)
-- [Creating the File System <a name="create-filesys"></a>](#creating-the-file-system-)
-- [Connecting to WiFi <a name="wifi"></a>](#connecting-to-wifi-)
-- [Select the Arch mirrors <a name="mirrors"></a>](#select-the-arch-mirrors-)
-- [Mount the file system <a name="mount"></a>](#mount-the-file-system-)
-- [Configure Arch <a name="configure-arch"></a>](#configure-arch-)
-- [Installing GRUB Bootloader <a name="grub"></a>](#installing-grub-bootloader-)
-- [Setting up a sudo user <a name="sudouser"></a>](#setting-up-a-sudo-user-)
-- [Installing KDE Plasma <a name="kde"></a>](#installing-kde-plasma-)
+-   [Sections](#sections)
+-   [Downloading the ISO <a name="download-iso"></a>](#downloading-the-iso-)
+-   [Creating a live USB <a name="create-usb"></a>](#creating-a-live-usb-)
+-   [Booting from the newly created live USB <a name="boot-usb"></a>](#booting-from-the-newly-created-live-usb-)
+-   [Partitioning the Disk <a name="partition-disk"></a>](#partitioning-the-disk-)
+-   [Creating the File System <a name="create-filesys"></a>](#creating-the-file-system-)
+-   [Connecting to WiFi <a name="wifi"></a>](#connecting-to-wifi-)
+-   [Select the Arch mirrors <a name="mirrors"></a>](#select-the-arch-mirrors-)
+-   [Mount the file system <a name="mount"></a>](#mount-the-file-system-)
+-   [Configure Arch <a name="configure-arch"></a>](#configure-arch-)
+-   [Installing GRUB Bootloader <a name="grub"></a>](#installing-grub-bootloader-)
+-   [Setting up a sudo user <a name="sudouser"></a>](#setting-up-a-sudo-user-)
+-   [Installing KDE Plasma <a name="kde"></a>](#installing-kde-plasma-)
 
 <br />
 

@@ -2,9 +2,9 @@
 title: "Job Search App (C++)"
 date: "9/24/2020 10:35 PM"
 subject: "Showcase"
-default_height: "2050vh"
-laptop_height: "2350vh"
-phone_height: "2550vh"
+default_height: "2000vh"
+laptop_height: "2300vh"
+phone_height: "2500vh"
 ---
 
 ## Introduction
