@@ -7,7 +7,7 @@ import JapanPic from "../components/JapanPic/JapanPic"
 
 export default function about() {
 	if (typeof window !== "undefined") {
-		console.log(window.screen.height)
+		//console.log(window.screen.height)
 	}
 	return (
 		<Layout

@@ -25,19 +25,18 @@ _This is not meant to be an installation guide, but rather an account of my expe
 
 ## Sections
 
--   [Sections](#sections)
--   [Downloading the ISO <a name="download-iso"></a>](#downloading-the-iso-)
--   [Creating a live USB <a name="create-usb"></a>](#creating-a-live-usb-)
--   [Booting from the newly created live USB <a name="boot-usb"></a>](#booting-from-the-newly-created-live-usb-)
--   [Partitioning the Disk <a name="partition-disk"></a>](#partitioning-the-disk-)
--   [Creating the File System <a name="create-filesys"></a>](#creating-the-file-system-)
--   [Connecting to WiFi <a name="wifi"></a>](#connecting-to-wifi-)
--   [Select the Arch mirrors <a name="mirrors"></a>](#select-the-arch-mirrors-)
--   [Mount the file system <a name="mount"></a>](#mount-the-file-system-)
--   [Configure Arch <a name="configure-arch"></a>](#configure-arch-)
--   [Installing GRUB Bootloader <a name="grub"></a>](#installing-grub-bootloader-)
--   [Setting up a sudo user <a name="sudouser"></a>](#setting-up-a-sudo-user-)
--   [Installing KDE Plasma <a name="kde"></a>](#installing-kde-plasma-)
+-   [Downloading the ISO <a name="download-iso"></a>](#download-iso)
+-   [Creating a live USB <a name="create-usb"></a>](#create-usb)
+-   [Booting from the newly created live USB <a name="boot-usb"></a>](#boot-usb)
+-   [Partitioning the Disk <a name="partition-disk"></a>](#partition-disk)
+-   [Creating the File System <a name="create-filesys"></a>](#create-filesys)
+-   [Connecting to WiFi <a name="wifi"></a>](#wifi)
+-   [Select the Arch Mirrors <a name="mirrors"></a>](#mirrors)
+-   [Mount the file system <a name="mount"></a>](#mount)
+-   [Configure Arch <a name="configure-arch"></a>](#configure-arch)
+-   [Installing GRUB Bootloader <a name="grub"></a>](#grub)
+-   [Setting up a sudo user <a name="sudouser"></a>](#sudouser)
+-   [Installing KDE Plasma <a name="kde"></a>](#kde)
 
 <br />
 
@@ -183,7 +182,7 @@ Once completed, run `ping www.google.com` and it should respond if the WiFi was 
 
 <br />
 
-## Select the Arch mirrors <a name="mirrors"></a>
+## Select the Arch Mirrors <a name="mirrors"></a>
 
 For this step, I used [Reflector](https://wiki.archlinux.org/index.php/Reflector "Reflector wiki page") to select the best Arch mirrors, sorted by speed, and overwrite the file at `/etc/pacman.d/mirrorlist`
 

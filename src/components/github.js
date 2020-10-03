@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 const Github = ({ style, className }) => {
 	const data = useStaticQuery(graphql`
 		query {
-			profile: file(relativePath: { eq: "githubprof.jpg" }) {
+			profile: file(relativePath: { eq: "github-profile2.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 900) {
 						...GatsbyImageSharpFluid

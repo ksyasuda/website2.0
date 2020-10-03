@@ -209,7 +209,7 @@
 	background-color: #908774;
 	position: relative;
 	width: 40%;
-	margin-bottom: 2%;
+	margin-bottom: 3%;
 	position: relative;
 	/* top: -250px; */
 	border-radius: 15px;
@@ -217,7 +217,7 @@
 	float: right;
 	align-self: flex-end;
 	/* left: 75.5%; */
-	top: 0px;
+	top: 10px;
 }
 
 .Home1 {
@@ -233,6 +233,7 @@
 	flex-flow: column;
 	position: relative;
 	top: -235px;
+	left: -30px;
 }
 
 .Excerpt {
@@ -291,7 +292,7 @@
 	position: relative;
 	top: 157px;
 	width: 45%;
-	/* left: 27.6%; */
+	left: 30px;
 	color: dodgerblue;
 	color: rgb(186, 94, 34);
 	text-align: center;
@@ -331,7 +332,7 @@
 .CheckOutPosts {
 	position: relative;
 	left: -80px;
-	top: -10px;
+	top: -26px;
 }
 
 /* .BigContainer {
@@ -415,6 +416,7 @@
 	}
 	.Github {
 		width: 80%;
+		left: 0px;
 	}
 	.GithubText {
 		text-align: center;

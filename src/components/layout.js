@@ -20,6 +20,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import FacebookIcon from "@material-ui/icons/Facebook"
 import RedditIcon from "@material-ui/icons/Reddit"
 import CreateIcon from "@material-ui/icons/Create"
+import EmailIcon from "@material-ui/icons/Email"
 
 const Layout = ({
 	children,
@@ -214,6 +215,19 @@ const Layout = ({
 									Blog
 								</Button>
 							</Link>
+							<a
+								className={classes.Links}
+								href={`mailto:ksyasuda@umich.edu`}
+								obfuscate={true}
+							>
+								<Button
+									color='secondary'
+									variant='text'
+									startIcon={<EmailIcon />}
+								>
+									Email
+								</Button>
+							</a>
 						</Breadcrumbs>
 					</footer>
 				</div>
