@@ -410,7 +410,7 @@
 	}
 	.CheckOutPosts {
 		left: 5px;
-		top: 10px;
+		top: 30px;
 	}
 	.GithubLink {
 		position: relative;
@@ -449,7 +449,7 @@
 	}
 	.CheckOutPosts {
 		position: relative;
-		top: 2px;
+		top: 8px;
 	}
 	.Excerpt {
 		width: 80%;
