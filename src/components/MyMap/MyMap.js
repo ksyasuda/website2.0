@@ -374,11 +374,6 @@ class MyMap extends Component {
 						onClick={this.onSearchHandler}
 						type='button'
 						id='send'
-						style={{
-							marginTop: "10px",
-							position: "relative",
-							left: "47.42%",
-						}}
 						className={classes.SearchBox}
 					>
 						Search
