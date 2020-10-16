@@ -399,12 +399,22 @@
 		left: 2px;
 	}
 	.Home2 {
-		top: 220px;
+		/*top: 220px;*/
+		top: -195px;
 		margin-bottom: 200px;
 		right: 250px;
 	}
+	.HomePost {
+		padding: 0px;
+		margin-bottom: 2%;
+	}
 	.CheckOutPosts {
 		left: 5px;
+		top: 10px;
+	}
+	.GithubLink {
+		position: relative;
+		top: 35px;
 	}
 }
 

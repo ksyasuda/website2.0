@@ -379,6 +379,7 @@ class MyMap extends Component {
 							position: "relative",
 							left: "47.42%",
 						}}
+						className={classes.SearchBox}
 					>
 						Search
 					</button>
