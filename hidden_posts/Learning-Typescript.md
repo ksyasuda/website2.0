@@ -73,6 +73,7 @@ Additionally, I decided not to use create-react-app for this project and learn h
 I modified a starter configuration I found online add added functionality to allow for [CSS Modules](https://github.com/css-modules/css-modules "CSS Modules GitHub page").
 
 ![my webpack.config.js file](https://i.imgur.com/B6wujkZ.png)
+
 <!-- TODO change to picture without transparent background  -->
 
 The `css-loader` and `style-loader` are loaders for webpack that enable the use of CSS Modules in TypeScript.
@@ -84,6 +85,7 @@ The main advantage of CSS Modules is localized styles per-component as opposed t
 ## Creating the BalanceBook Container
 
 For the main container that will serve as the index page of the application, I created an interface for the state.
+
 ```ts
 interface State {
 	initialBalance: number
@@ -104,10 +106,11 @@ The formData and form properties will hold the information that will be passed t
 
 The rest of the implementation for this class will have to wait for later as this is the base container that will utilize the two other main components I will make: the Transaction component and the Form component.
 
-As a result, I typically render some filler text describing what the output should look like in the end or what will end up replacing the filler text.  For instance I will output filler text in the location where I want the Form component to be rendered so that when the component is finished, I should be able to plug-and-play.
+As a result, I typically render some filler text describing what the output should look like in the end or what will end up replacing the filler text. For instance I will output filler text in the location where I want the Form component to be rendered so that when the component is finished, I should be able to plug-and-play.
 
 ---
 
 ## Making the Transaction Component <a name="making-transaction-comp"></a>
 
----
+
+--- 
