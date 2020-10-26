@@ -18,6 +18,7 @@ My coding background, prior to learning web development, had mostly been in stro
 3. [Planning my First TypeScript React Project](#first-project)
 4. [Setting Up Webpack](#setting-up-webpack)
 5. [Making the Transaction Component](#making-transaction-comp)
+6. [Writing the Form class](#writing-form-class)
 
 ---
 
@@ -88,15 +89,15 @@ For the main container that will serve as the index page of the application, I c
 
 ```ts
 interface State {
-	initialBalance: number
-	currentBalance: number
-	transactionAmount: number
-	transactions: Array<any>
-	transactionName: string
-	transactionType: string
-	transactionDate: string
-	formData: any
-	form: any
+    initialBalance: number
+    currentBalance: number
+    transactionAmount: number
+    transactions: Array<any>
+    transactionName: string
+    transactionType: string
+    transactionDate: string
+    formData: any
+    form: any
 }
 ```
 
@@ -112,5 +113,88 @@ As a result, I typically render some filler text describing what the output shou
 
 ## Making the Transaction Component <a name="making-transaction-comp"></a>
 
+The next step was to make a React component for each transaction.
 
---- 
+In order to do this, I passed in the necessary information as props to the component.
+
+```ts
+type Props = {
+    balance: number
+    transactionAmount: number
+    transactionName: string
+    transactionDate: string
+    transactionType: string
+}
+```
+
+I created a Props type that defines the Props that are needed for the component
+
+`balance` is passed in so that the component can display the balance after the transaction.
+
+The actual Transaction component itself is relatively simple:
+
+```js
+return (
+    <div className={classes.Container} style={style}>
+        <p className={classes.TName}>
+            <span className={classes.TNameText}>{transactionName}</span> on{" "}
+            {transactionDate}
+        </p>
+        <p className={classes.TAmount}>
+            ${balance} {transChar} ${transactionAmount} = ${afterBalance}
+        </p>
+    </div>
+)
+```
+
+Each type of transaction gets a standardized styling as defined in `Transactions.module.css`.
+
+However, depending on `transactionType`, denoted by a '+' or a '-', the background color will either be green for a positive balance change and red for a negative change.
+
+---
+
+## Writing the Form Class <a name="writing-form-class"></a>
+
+The next step was to create the Form class, which will return HTML form elements based on the `elementType` prop.
+
+Additionally, the information needed for each form element such as 'placeholder' or 'name' are included in the `elementConfig` prop.
+
+```ts
+switch (this.state.elementType) {
+    case "text":
+        return (
+            <input
+                id='tname'
+                type={this.state.elementType}
+                value={this.state.value}
+                placeholder={this.state.elementConfig.placeholder}
+                name={this.state.elementConfig.name}
+                onChange={this.handleChange}
+            />
+        )
+    case "number":
+        return (
+            <input
+                id='tamount'
+                type={this.state.elementType}
+                value={this.state.value}
+                placeholder={this.state.elementConfig.placeholder}
+                name={this.state.elementConfig.name}
+                onChange={this.handleChange}
+                style={{
+                    marginRight: "10px",
+                    marginLeft: "10px",
+                }}
+            />
+        )
+    case ...
+    case "submit":
+        return <input type='submit' />
+}
+```
+
+With this, each type of form element needed can be created programatically by looping through an array that contains the `elementConfig` for each input type.
+
+![creating the forms](https://i.imgur.com/GGk8cPs.png)
+
+---
