@@ -19,6 +19,8 @@ My coding background, prior to learning web development, had mostly been in stro
 4. [Setting Up Webpack](#setting-up-webpack)
 5. [Making the Transaction Component](#making-transaction-comp)
 6. [Writing the Form class](#writing-form-class)
+7. [Displaying the transactions](#display-transactions)
+8. [Adding a Delete Transaction Function](#delete-function)
 
 ---
 
@@ -89,15 +91,15 @@ For the main container that will serve as the index page of the application, I c
 
 ```ts
 interface State {
-    initialBalance: number
-    currentBalance: number
-    transactionAmount: number
-    transactions: Array<any>
-    transactionName: string
-    transactionType: string
-    transactionDate: string
-    formData: any
-    form: any
+	initialBalance: number
+	currentBalance: number
+	transactionAmount: number
+	transactions: Array<any>
+	transactionName: string
+	transactionType: string
+	transactionDate: string
+	formData: any
+	form: any
 }
 ```
 
@@ -119,11 +121,11 @@ In order to do this, I passed in the necessary information as props to the compo
 
 ```ts
 type Props = {
-    balance: number
-    transactionAmount: number
-    transactionName: string
-    transactionDate: string
-    transactionType: string
+	balance: number
+	transactionAmount: number
+	transactionName: string
+	transactionDate: string
+	transactionType: string
 }
 ```
 
@@ -135,15 +137,15 @@ The actual Transaction component itself is relatively simple:
 
 ```js
 return (
-    <div className={classes.Container} style={style}>
-        <p className={classes.TName}>
-            <span className={classes.TNameText}>{transactionName}</span> on{" "}
-            {transactionDate}
-        </p>
-        <p className={classes.TAmount}>
-            ${balance} {transChar} ${transactionAmount} = ${afterBalance}
-        </p>
-    </div>
+	<div className={classes.Container} style={style}>
+		<p className={classes.TName}>
+			<span className={classes.TNameText}>{transactionName}</span> on{" "}
+			{transactionDate}
+		</p>
+		<p className={classes.TAmount}>
+			${balance} {transChar} ${transactionAmount} = ${afterBalance}
+		</p>
+	</div>
 )
 ```
 
@@ -198,3 +200,17 @@ With this, each type of form element needed can be created programatically by lo
 ![creating the forms](https://i.imgur.com/GGk8cPs.png)
 
 ---
+
+## Displaying the Transactions <a name="display-transactions"></a>
+
+Now that I can handle user input, all that is left is using the data from the form to create and render transaction components to the DOM.
+
+![displayed transactions](https://i.imgur.com/GyTpI4C.png)
+
+On form submission, I send the data to a SQLite3 database I created to keep track of the transactions through sessions.  After inserting the data into database, I also update the state to include the data for the new component.
+
+When the state changes, it will trigger a rerender cycle for the component and output the new transaction to the screen.
+
+---
+
+## Adding a Delete Transaction Function <a name="delete-function"></a>
