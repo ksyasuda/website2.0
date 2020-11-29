@@ -1,26 +1,11 @@
 ---
 title: "Installing and Ricing Arcolinux"
-date: "11/29/2020 11:18 PM"
+date: "Nov/29/2020 11:18 AM"
 subject: "Setup"
-default_height: "2000vh"
-laptop_height: "2900vh"
-phone_height: "3200vh"
+default_height: "1900vh"
+laptop_height: "1900vh"
+phone_height: "2250vh"
 ---
-
-## Sections
-
--   [Introduction](#introduction)
--   [Installing i3 Window Manager](#install-i3)
--   [Setting up Oh-My-Zsh](#oh-my-zsh)
--   [Configuring i3](#configure-i3)
--   [Fixing the Wallpaper](#fixing-wallpaper)
--   [Setting up my Vimrc](#vimrc)
--   [Installing and Configuring Polybar](#install-polybar)
--   [Installing Picom and Setting up my Config](#install-picom)
--   [Rofi Scripts](#rofi-scripts)
--   [Installing and launching KDE Applets](#kde-applets)
--   [Other Programs/Scripts](#other-things)
--   [Conclusion](#the-end-yea)
 
 ## Introduction <a name="introduction"></a>
 
@@ -45,6 +30,24 @@ After downloading the ISO, I used the tool
 plugged the USB into my computer, and booted into Arcolinux. Arcolinux comes
 with the https://calamares.io/ installer, which is a point and click interface
 for setting up the system and installing some initial packages.
+
+<details>
+<summary><h2><a>Sections (expandable)</a></h2></summary>
+
+-   [Introduction](#introduction)
+-   [Installing i3 Window Manager](#install-i3)
+-   [Setting up Oh-My-Zsh](#oh-my-zsh)
+-   [Configuring i3](#configure-i3)
+-   [Fixing the Wallpaper](#fixing-wallpaper)
+-   [Setting up my Vimrc](#vimrc)
+-   [Installing and Configuring Polybar](#install-polybar)
+-   [Installing Picom and Setting up my Config](#install-picom)
+-   [Rofi Scripts](#rofi-scripts)
+-   [Installing and launching KDE Applets](#kde-applets)
+-   [Other Programs/Scripts](#other-things)
+-   [Conclusion](#the-end-yea)
+
+</details>
 
 ## Installing i3 Window Manager <a name="install-i3"></a>
 
