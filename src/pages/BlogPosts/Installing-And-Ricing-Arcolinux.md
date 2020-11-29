@@ -286,7 +286,7 @@ plasmawindowed org.kde.plasma.eventcalendar &
 
 ![applets](https://i.imgur.com/Ly9LhIQ.png)
 
-## Other Programs/Scripts <a <name="other-things"></a>
+## Other Programs/Scripts <a name="other-things"></a>
 
 The configuration files for the following progrmas can be found in [this repo](https://github.com/ksyasuda/Sudacode-Rice).
 
@@ -334,6 +334,6 @@ At the end of my `~/.zshrc`, I call `random_starter.sh`, which chooses one comma
 
 ![cowtune output](https://i.imgur.com/xfeDg4O.png)
 
-## Conclusion
+## Conclusion <a name="the-end-yea"></a>
 
 Now, I have configured my laptop to the same point that my old laptop is at. I will continue to experiment and change my configurations in the future and will probably never be satisfied fully. You can keep track of my progress [here on my blog](https://sudacode.com/blog) in future posts, or on my [github](https://github.com/ksyasuda). Currently, I have two repos that I use in everyday ricing. My [dotfiles repo](https://github.com/ksyasuda/dotfiles) contains the dotfiles in my home directory (except for the Doom Emacs config files as they are not themselves dotfiles) like `.zshrc` and `.vimrc`. The [Sudacode-Rice repo](https://github.com/ksyasuda/Sudacode-Rice) contains configurations files for installed software like `polybar` and `cava`.
