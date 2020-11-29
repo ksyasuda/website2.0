@@ -15,6 +15,7 @@ phone_height: "1200vh"
 - [Fixing the Wallpaper](#fixing-wallpaper)
 - [Installing and Configuring Polybar](#install-polybar)
 - [Installing Picom and Setting up my Config](#install-picom)
+- [Rofi Scripts](#rofi-scripts)
 
 ## Introduction <a name="introduction"></a>
 
@@ -171,3 +172,24 @@ blur: {
 With that, I had transparent and blurred windows with rounded corners.
 
 ![desktop img](https://i.imgur.com/HJ472NZ.png)
+
+## Rofi Scripts <a name="rofi-scripts"></a>
+
+I have polybar modules and scripts that use [rofi](https://github.com/davatorium/rofi)
+to create different application launchers, menus, and a window switcher.
+
+### Examples
+
+Full-screen application launcher
+
+![fullscreen menu](https://imgur.com/sr3D7SL.png)
+
+Customized [rofi-bluetooth](ihttps://github.com/ClydeDroid/rofi-bluetooth)
+
+![rofi-bluetooth](https://imgur.com/i0z3Q87.png)
+
+Tab Switcher
+
+![tab switcher](https://imgur.com/2vmgRYN.png)
+
+All of the scripts and configuration files can be found in [this repo](https://github.com/ksyasuda/Sudacode-Rice)
