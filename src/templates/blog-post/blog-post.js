@@ -9,17 +9,17 @@ import NavigationIcon from "@material-ui/icons/Navigation"
 const blogPost = ({ data }) => {
 	const post = data.markdownRemark
 	let height = post.frontmatter.default_height
-	if (
-		typeof window !== "undefined" &&
-		window.screen.height < 1080 &&
-		window.screen.height > 600
-	) {
-		height = post.frontmatter.laptop_height
-	}
+	// if (
+	// 	typeof window !== "undefined" &&
+	// 	window.screen.height < 1080 &&
+	// 	window.screen.height > 600
+	// ) {
+	// 	height = post.frontmatter.laptop_height
+	// }
 
-	if (typeof window !== "undefined" && window.screen.width < 600) {
-		height = post.frontmatter.phone_height
-	}
+	// if (typeof window !== "undefined" && window.screen.width < 600) {
+	// 	height = post.frontmatter.phone_height
+	// }
 	return (
 		<Layout height={height} isBlog={true} id='top-of-page'>
 			<SEO

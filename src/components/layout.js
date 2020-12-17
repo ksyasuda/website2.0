@@ -44,31 +44,31 @@ const Layout = ({
 	}
 	// let style = { height: height }
 	//! if a height for the layout is specified then apply the new height to style
-	let style
-	if (!backgroundImg) {
-		// console.log("no background")
-		style = {
-			backgroundColor: "rgb(211, 211, 211)",
-			height: height,
-		}
-	} else if (backgroundImg) {
-		// console.log("nice")
-		style = {
-			...style,
-			backgroundColor: "none",
-			height: height,
-		}
-	}
+	// let style
+	// if (!backgroundImg) {
+	// 	// console.log("no background")
+	// 	style = {
+	// 		// backgroundColor: "rgb(211, 211, 211)",
+	// 		height: height,
+	// 	}
+	// } else if (backgroundImg) {
+	// 	// console.log("nice")
+	// 	style = {
+	// 		...style,
+	// 		backgroundColor: "none",
+	// 		height: height,
+	// 	}
+	// }
 
-	if (typeof window !== "undefined" && window.screen.width < 700) {
-		// console.log("yup")
-		if (phoneHeight !== undefined) {
-			style = {
-				...style,
-				height: phoneHeight,
-			}
-		}
-	}
+	// if (typeof window !== "undefined" && window.screen.width < 700) {
+	// 	// console.log("yup")
+	// 	if (phoneHeight !== undefined) {
+	// 		style = {
+	// 			...style,
+	// 			height: phoneHeight,
+	// 		}
+	// 	}
+	// }
 
 	// if (backgroundImg !== undefined) {
 	// 	style = {
@@ -112,8 +112,9 @@ const Layout = ({
 		<>
 			<Helmet>
 				<link rel='icon' href={favicon} />
+				isBlog ? <style>{"body { background-color: #292f36 }"}</style> : <style>{"body { background-color: #b8bbbc }"}</style> 
 			</Helmet>
-			<div style={style} id={id} className={classes.BigContainer}>
+			<div id={id} className={classes.BigContainer}>
 				<Header
 					clicked={onClickHandler}
 					siteTitle={data.site.siteMetadata.title}

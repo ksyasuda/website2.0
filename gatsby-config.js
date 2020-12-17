@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = {
 	siteMetadata: {
 		title: `Sudacode`,
-		description: `A website/portfolio/blog to show off my peronal projects as well as blog about topics in technology and computer science as a whole that I find interesting.  All while trying to help others learn more about the topics at the same time.`,
+		description: `A personal blog/portfolio to show off my peronal projects as well as blog about topics in technology and computer science as a whole that I find interesting.  All while trying to help others learn more about the topics at the same time.`,
 		author: `@Kyle Yasuda - Sudacode`,
 		lang: "en-US",
 	},
