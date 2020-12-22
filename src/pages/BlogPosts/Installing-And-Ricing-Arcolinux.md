@@ -45,7 +45,7 @@ for setting up the system and installing some initial packages.
 -   [Rofi Scripts](#rofi-scripts)
 -   [Installing and launching KDE Applets](#kde-applets)
 -   [Other Programs/Scripts](#other-things)
--   [Conclusion](#the-end-yea)
+-   [Where to go from Here](#the-end-yea)
 
 </details>
 
@@ -59,6 +59,54 @@ First, I installed the fork of i3, [i3-gaps](https://github.com/Airblader/i3),
 which allows for spacing between and around windows. Next, to use a new window
 manager with Plasma, there are two options: a system-wide change, or a user
 change. I chose to do a system-wide change by adding a XSession.
+
+### Adding a new XSession
+
+-   First, copy the existing Plasma file in the `/usr/share/xsessions` folder
+    cp plasma.desktop plasma-i3.desktop
+-   Next, open the newly-created `plasma-i3.desktop` file in a text editor and
+    change the exec line to
+    ```
+    [Desktop Entry]
+    Type=XSession
+    Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
+    DesktopNames=KDE
+    Name=Plasma (i3)
+    Comment=Plasma by KDE w/i3
+    ```
+-   Then save and quit the file and logout of the device. Upon reaching the login
+    screen, you should see the new XSession to launch into
+
+After selecting the new XSession and logging in, i3 should be up an running
+
+## Configuring i3 <a name="configure-i3"></a>
+
+The next thing on my list was to configure i3 itself. I cloned the config file
+from my [repo](https://github.com/ksyasuda/Sudacode-Rice) and created a sym-link
+from my custom config file to the default i3 config location `~/.config/i3/config`
+by running, from within the `Sudacode-Rice/configs` folder, `ln -sr config ~/.config/i3/config`.
+
+A sym-link, or symbolic link, is analagous to a pointer in C/C++. The file at
+`~/.config/i3/config` is basically a pointer to my custom config file at
+`Sudacode-Rice/configs/config`. So whenever i3 runs and looks for the config
+file at `~/.config/i3/config` it loads my configuration file.
+
+My i3-gaps configuration file sets the default 'inner' gap of each window to 20.
+Which basically just puts padding around each window of 20px.
+
+Additionally, I have it set up so that certain applications launch on specific workspaces:
+
+-   Emacs and Vim launch on workspace 1
+-   Firefox launches on workspace 2
+-   Vscode launches on workspace 3
+-   Spotify launches on workspace 9
+
+I have custom keybindings to do things like resizing windows, set windows
+to float mode, and changing the size of the gaps between and around windows
+
+There are also keybinding to execute bash scripts that utilize [rofi](https://github.com/davatorium/rofi)
+to create custom application launchers, tab switchers, and menus. I go into
+more detail about the rofi scrips [here](#rofi-scripts)
 
 ## Setting up Oh-My-Zsh <a name="oh-my-zsh"></a>
 
@@ -109,54 +157,6 @@ One other file that my `.zshrc` depends on is `~/.bash_aliases`, which is a file
 After running all the install commands, I created two sym-links from the dotfiles directory: one from the `~/dotfiles/.p10kzsh`, which is the configuration file for powerlevel10k, to my home directory (`~`), and the other from `~/dotfiles/.zshrc` to the home directory. Then, I reloaded `~/.zshrc` with `source ~/.zshrc` and my zsh was set up without issues.
 
 ![terminal](https://i.imgur.com/xP67fag.png)
-
-### Adding a new XSession
-
--   First, copy the existing Plasma file in the `/usr/share/xsessions` folder
-    cp plasma.desktop plasma-i3.desktop
--   Next, open the newly-created `plasma-i3.desktop` file in a text editor and
-    change the exec line to
-    ```
-    [Desktop Entry]
-    Type=XSession
-    Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
-    DesktopNames=KDE
-    Name=Plasma (i3)
-    Comment=Plasma by KDE w/i3
-    ```
--   Then save and quit the file and logout of the device. Upon reaching the login
-    screen, you should see the new XSession to launch into
-
-After selecting the new XSession and logging in, i3 should be up an running
-
-## Configuring i3 <a name="configure-i3"></a>
-
-The next thing on my list was to configure i3 itself. I cloned the config file
-from my [repo](https://github.com/ksyasuda/Sudacode-Rice) and created a sym-link
-from my custom config file to the default i3 config location `~/.config/i3/config`
-by running, from within the `Sudacode-Rice/configs` folder, `ln -sr config ~/.config/i3/config`.
-
-A sym-link, or symbolic link, is analagous to a pointer in C/C++. The file at
-`~/.config/i3/config` is basically a pointer to my custom config file at
-`Sudacode-Rice/configs/config`. So whenever i3 runs and looks for the config
-file at `~/.config/i3/config` it loads my configuration file.
-
-My i3-gaps configuration file sets the default 'inner' gap of each window to 20.
-Which basically just puts padding around each window of 20px.
-
-Additionally, I have it set up so that certain applications launch on specific workspaces:
-
--   Emacs and Vim launch on workspace 1
--   Firefox launches on workspace 2
--   Vscode launches on workspace 3
--   Spotify launches on workspace 9
-
-I have custom keybindings to do things like resizing windows, set windows
-to float mode, and changing the size of the gaps between and around windows
-
-There are also keybinding to execute bash scripts that utilize [rofi](https://github.com/davatorium/rofi)
-to create custom application launchers, tab switchers, and menus. I go into
-more detail about the rofi scrips [here](#rofi-scripts)
 
 ## Fixing The Wallpaper <a name="fixing-wallpaper"></a>
 
@@ -324,16 +324,12 @@ To get images to render in Ranger, my configuration uses `w3mimgdisplay`, which 
 
 ![ranger image](https://i.imgur.com/T4KN14J.jpg)
 
-### `random_starter.sh`
-
-At the end of my `~/.zshrc`, I call `random_starter.sh`, which chooses one command, out of a preset array of options, and runs the command each time `~/.zshrc` is loaded. At the moment, it only includes `archey3`, `screenfetch`, `neofetch`, and `cowtune`.
-
 ### cowtune
 
 `cowtune` is a fun script that I wrote, which I'm sure has been done a milion times before, that pipes the output from `fortune` to `cowsay`. It then pipes that output to `lolcat` to get rainbow colors. The script has the additional feature of choosing one theme from `/usr/share/cows/` to apply to the `cowsay` command.
 
 ![cowtune output](https://i.imgur.com/xfeDg4O.png)
 
-## Conclusion <a name="the-end-yea"></a>
+## Where to Go From Here <a name="the-end-yea"></a>
 
 Now, I have configured my laptop to the same point that my old laptop is at. I will continue to experiment and change my configurations in the future and will probably never be satisfied fully. You can keep track of my progress [here on my blog](https://sudacode.com/blog) in future posts, or on my [github](https://github.com/ksyasuda). Currently, I have two repos that I use in everyday ricing. My [dotfiles repo](https://github.com/ksyasuda/dotfiles) contains the dotfiles in my home directory (except for the Doom Emacs config files as they are not themselves dotfiles) like `.zshrc` and `.vimrc`. The [Sudacode-Rice repo](https://github.com/ksyasuda/Sudacode-Rice) contains configurations files for installed software like `polybar` and `cava`.
