@@ -91,7 +91,7 @@ const blog = ({ data }) => {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+		allMarkdownRemark(sort: { fields: [frontmatter___id], order: DESC }) {
 			totalCount
 			edges {
 				node {

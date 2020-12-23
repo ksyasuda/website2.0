@@ -1,10 +1,8 @@
 ---
 title: "Installing and Ricing Arcolinux"
-date: "Nov/29/2020 11:18 AM"
+date: "11/29/2020 11:18 AM"
 subject: "Setup"
-default_height: "1900vh"
-laptop_height: "1900vh"
-phone_height: "2250vh"
+id: 4
 ---
 
 ## Introduction <a name="introduction"></a>

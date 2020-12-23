@@ -2,9 +2,7 @@
 title: "Installing Arch Linux on my Old Laptop"
 date: "9/13/2020 11:35 AM"
 subject: "Setup"
-default_height: "1222vh"
-laptop_height: "1900vh"
-phone_height: "1800vh"
+id: 1
 ---
 
 ---

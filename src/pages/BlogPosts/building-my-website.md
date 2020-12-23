@@ -2,9 +2,7 @@
 title: "Building This Website"
 date: "9/20/20 12:15 AM"
 subject: "Showcase"
-default_height: "1480vh"
-laptop_height: "2250vh"
-phone_height: "2900vh"
+id: 2
 ---
 
 ## Introduction

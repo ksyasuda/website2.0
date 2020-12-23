@@ -8,20 +8,8 @@ import NavigationIcon from "@material-ui/icons/Navigation"
 
 const blogPost = ({ data }) => {
 	const post = data.markdownRemark
-	let height = post.frontmatter.default_height
-	// if (
-	// 	typeof window !== "undefined" &&
-	// 	window.screen.height < 1080 &&
-	// 	window.screen.height > 600
-	// ) {
-	// 	height = post.frontmatter.laptop_height
-	// }
-
-	// if (typeof window !== "undefined" && window.screen.width < 600) {
-	// 	height = post.frontmatter.phone_height
-	// }
 	return (
-		<Layout height={height} isBlog={true} id='top-of-page'>
+		<Layout isBlog={true} id='top-of-page'>
 			<SEO
 				title={post.frontmatter.title}
 				description={post.frontmatter.description}
@@ -61,9 +49,6 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				default_height
-				laptop_height
-				phone_height
 				subject
 			}
 		}
