@@ -24,48 +24,46 @@ class IndexPage extends Component {
 		data.allMarkdownRemark.edges.map(node => {
 			// console.log(node)
 			node = node.node
-			if (posts.length < 2) {
-				posts.push(
-					<div key={node.id} className={classes.HomePost}>
-						<Link
-							to={node.fields.slug}
-							style={{ textDecoration: "none" }}
+			posts.push(
+				<div key={node.id} className={classes.HomePost}>
+					<Link
+						to={node.fields.slug}
+						style={{ textDecoration: "none" }}
+					>
+						<h3
+							style={{
+								fontSize: "18px",
+								textDecoration: "none",
+								position: "relative",
+								left: "5px",
+								textAlign: "left",
+								marginTop: "3px",
+								color: "#191E27",
+							}}
 						>
-							<h3
+							{node.frontmatter.title}
+							<br />
+							<span
 								style={{
-									fontSize: "18px",
+									fontSize: "small",
 									textDecoration: "none",
 									position: "relative",
 									left: "5px",
-									textAlign: "left",
-									marginTop: "3px",
-									color: "#191E27",
+									top: "8px",
+									color: "#1D1A28",
 								}}
 							>
-								{node.frontmatter.title}
-								<br />
-								<span
-									style={{
-										fontSize: "small",
-										textDecoration: "none",
-										position: "relative",
-										left: "5px",
-										top: "8px",
-										color: "#1D1A28",
-									}}
-								>
-									- {node.frontmatter.date} |{" "}
-									<span className={classes.Subject}>
-										{node.frontmatter.subject}
-									</span>
+								- {node.frontmatter.date} |{" "}
+								<span className={classes.Subject}>
+									{node.frontmatter.subject}
 								</span>
-							</h3>
-							<hr style={{ marginTop: "5px" }} />
-							<p className={classes.HomeBody}>{node.excerpt}</p>
-						</Link>
-					</div>
-				)
-			} else return
+							</span>
+						</h3>
+						<hr style={{ marginTop: "5px" }} />
+						<p className={classes.HomeBody}>{node.excerpt}</p>
+					</Link>
+				</div>
+			)
 		})
 		this.setState({ posts: posts })
 	}
@@ -161,7 +159,7 @@ class IndexPage extends Component {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+		allMarkdownRemark(sort: { fields: [frontmatter___id], order: DESC } limit: 2) {
 			totalCount
 			edges {
 				node {
