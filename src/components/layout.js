@@ -56,7 +56,7 @@ const Layout = ({
 				<div
 					style={{
 						margin: `0 auto`,
-						maxWidth: 1420,
+						maxWidth: 1700,
 						padding: `1.45rem 1.0875rem 1.45rem`,
 					}}
 				>

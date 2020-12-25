@@ -14,6 +14,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+	position: relative;
+	left: 9%;
 }
 
 .homelink {
@@ -237,7 +239,7 @@
 	/* background-color: black; */
 	flex-flow: column;
 	position: relative;
-	top: -235px;
+	top: -295px;
 	left: -30px;
 }
 
@@ -310,7 +312,7 @@
 	position: absolute;
 	z-index: 100;
 	top: -30px;
-	left: 14px;
+	left: 54px;
 	width: 100%;
 	text-decoration: none;
 	text-align: left;
@@ -336,8 +338,7 @@
 
 .CheckOutPosts {
 	position: relative;
-	left: -118px;
-	top: 6px;
+	left: -160px;
 }
 
 /* .BigContainer {
@@ -409,29 +410,38 @@
 	}
 	.Home2 {
 		/*top: 220px;*/
-		top: -175px;
+		top: -95px;
 		margin-bottom: 200px;
 		right: 250px;
 	}
 	.HomePost {
 		padding: 0px;
-		margin-bottom: 2%;
+		position: relative;
+		top: 70px;
 	}
 	.CheckOutPosts {
-		left: 5px;
+		left: 24px;
 		top: 30px;
 	}
 	.GithubLink {
 		position: relative;
 		top: 35px;
 	}
+	.BlogPostsContainer {
+		position: relative;
+		left: 5%;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		position: relative;
+	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
 	.Home1 {
 		position: relative;
-		/* left: 10px; */
 		justify-content: center;
+		top: -20px;
 	}
 	.Github {
 		width: 80%;
@@ -445,7 +455,7 @@
 	}
 	.Home2 {
 		position: relative;
-		top: 200px;
+		top: 120px;
 		width: 100%;
 		left: 0px;
 		/* left: -253px; */
@@ -459,7 +469,7 @@
 	}
 	.CheckOutPosts {
 		position: relative;
-		top: 24px;
+		top: 77px;
 		left: 12px;
 	}
 	.Excerpt {
@@ -476,5 +486,9 @@
 	}
 	.ReadStr {
 		display: none;
+	}
+	.PostsCont {
+		position: relative;
+		left: -20px;
 	}
 }
