@@ -55,7 +55,7 @@ class IndexPage extends Component {
 							>
 								{node.frontmatter.date} |{" "}
 								<span className={classes.Subject}>
-									{node.frontmatter.subject}|{" "}
+									{node.frontmatter.subject}{" "}|{" "}
 								</span>
 								<span>{node.timeToRead} min read</span>
 							</span>
