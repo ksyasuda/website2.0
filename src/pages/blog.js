@@ -25,66 +25,69 @@ const blog = ({ data }) => {
 				title='Blog'
 				description='A blog where I can showcase my personal projects, showcase my setup, and talk about interesting topics in computer science and technology'
 			/>
-			<div>
+			<>
 				<h1 className={classes.BlogPosts}>Blog Posts</h1>
 				<h4 className={classes.numPosts}>
 					{data.allMarkdownRemark.totalCount} Posts
 				</h4>
-				{data.allMarkdownRemark.edges.map(({ node }) => {
-					let random_num = Math.floor(
-						Math.random() * Math.floor(vcolors.length)
-					)
-					let color = vcolors[random_num]
-					while (lastColor && lastColor === color) {
-						random_num = Math.floor(
+				<div className={classes.BlogPostsContainer}>
+					{data.allMarkdownRemark.edges.map(({ node }) => {
+						let random_num = Math.floor(
 							Math.random() * Math.floor(vcolors.length)
 						)
-						color = vcolors[random_num]
-					}
-					lastColor = color
-					return (
-						<div className={classes.PostsCont} key={node.id}>
-							<Link
-								to={node.fields.slug}
-								className={classes.link}
-								style={{
-									backgroundColor: color,
-								}}
-							>
-								<div
-									key={node.id}
-									style={{ backgroundColor: color }}
-									className={classes.postContainer}
+						let color = vcolors[random_num]
+						while (lastColor && lastColor === color) {
+							random_num = Math.floor(
+								Math.random() * Math.floor(vcolors.length)
+							)
+							color = vcolors[random_num]
+						}
+						lastColor = color
+						return (
+							<div className={classes.PostsCont} key={node.id}>
+								<Link
+									to={node.fields.slug}
+									className={classes.link}
+									style={{
+										backgroundColor: color,
+									}}
 								>
-									<h3
-										className={classes.Title}
-										style={{ marginBottom: "2px" }}
+									<div
+										key={node.id}
+										style={{ backgroundColor: color }}
+										className={classes.postContainer}
 									>
-										{node.frontmatter.title}
-										{<br />}
-										<span
-											style={{
-												color: "black",
-												fontSize: "small",
-												textDecoration: "none",
-											}}
+										<h3
+											className={classes.Title}
+											style={{ marginBottom: "2px" }}
 										>
-											- {node.frontmatter.date} |{" "}
-											<span className={classes.Subject}>
-												{node.frontmatter.subject}
-											</span>{" "}
-										</span>
-										<hr className={classes.Line} />
-									</h3>
-									<p className={classes.Body}>
-										{node.excerpt}
-									</p>
-								</div>
-							</Link>
-						</div>
-					)
-				})}
-			</div>
+											{node.frontmatter.title}
+											{<br />}
+											<span
+												style={{
+													color: "black",
+													fontSize: "small",
+													textDecoration: "none",
+												}}
+											>
+												{node.frontmatter.date} |{" "}
+												<span className={classes.Subject}>
+													{node.frontmatter.subject}
+												</span>{" "}|{" "}
+											</span>
+											<span style={{fontSize: 'small', fontWeight: 'bold'}}>{node.timeToRead} min read</span>
+											<hr className={classes.Line} />
+										</h3>
+										<p className={classes.Body}>
+											{node.excerpt}
+										</p>
+									</div>
+								</Link>
+							</div>
+						)
+					})}
+				</div>
+			</>
 		</Layout>
 	)
 }
@@ -102,6 +105,7 @@ export const query = graphql`
 						subject
 					}
 					excerpt
+					timeToRead
 					fields {
 						slug
 					}
