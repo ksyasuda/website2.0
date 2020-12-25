@@ -53,10 +53,11 @@ class IndexPage extends Component {
 									color: "#1D1A28",
 								}}
 							>
-								- {node.frontmatter.date} |{" "}
+								{node.frontmatter.date} |{" "}
 								<span className={classes.Subject}>
-									{node.frontmatter.subject}
+									{node.frontmatter.subject}|{" "}
 								</span>
+								<span>{node.timeToRead} min read</span>
 							</span>
 						</h3>
 						<hr style={{ marginTop: "5px" }} />
@@ -170,6 +171,7 @@ export const query = graphql`
 						subject
 					}
 					excerpt
+					timeToRead
 					fields {
 						slug
 					}
