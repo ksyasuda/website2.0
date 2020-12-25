@@ -474,4 +474,7 @@
 		width: 98%;
 		height: 370px;
 	}
+	.ReadStr {
+		display: none;
+	}
 }

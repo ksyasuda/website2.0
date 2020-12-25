@@ -42,77 +42,11 @@ const Layout = ({
 	const onClickHandler = event => {
 		// console.log("click")
 	}
-	// let style = { height: height }
-	//! if a height for the layout is specified then apply the new height to style
-	// let style
-	// if (!backgroundImg) {
-	// 	// console.log("no background")
-	// 	style = {
-	// 		// backgroundColor: "rgb(211, 211, 211)",
-	// 		height: height,
-	// 	}
-	// } else if (backgroundImg) {
-	// 	// console.log("nice")
-	// 	style = {
-	// 		...style,
-	// 		backgroundColor: "none",
-	// 		height: height,
-	// 	}
-	// }
-
-	// if (typeof window !== "undefined" && window.screen.width < 700) {
-	// 	// console.log("yup")
-	// 	if (phoneHeight !== undefined) {
-	// 		style = {
-	// 			...style,
-	// 			height: phoneHeight,
-	// 		}
-	// 	}
-	// }
-
-	// if (backgroundImg !== undefined) {
-	// 	style = {
-	// 		...style,
-	// 		backgroundImage: backgroundImg,
-	// 		backgroundRepeat: "no-repeat",
-	// 		// backgroundPosition: "0 97px",
-	// 		backgroundSize: "101% 120%",
-	// 	}
-	// }
-
-	// if (typeof window !== "undefined" && window.screen.width < 700) {
-	// 	// console.log("phone")
-	// 	style = {
-	// 		...style,
-	// 		backgroundImage: "",
-	// 	}
-	// 	// console.log("phone height", phoneHeight)
-	// 	if (phoneHeight !== undefined) {
-	// 		// console.log("inner if")
-	// 		style = {
-	// 			...style,
-	// 			height: phoneHeight,
-	// 		}
-	// 	}
-	// }
-
-	//! if there is not a background image set then set the background color to the default
-	// if (backgroundImg !== "") {
-	// 	style = {
-	// 		...style,
-	// 		backgroundColor: "rgb(211, 211, 211)",
-	// 		// backgroundColor: "rgb(49, 53, 61)",
-	// 		// height: "200vh",
-	// 	}
-	// }
-
-	// console.log(style)
-	// console.log("style", style)
 	return (
 		<>
 			<Helmet>
 				<link rel='icon' href={favicon} />
-				isBlog ? <style>{"body { background-color: #292f36 }"}</style> : <style>{"body { background-color: #b8bbbc }"}</style> 
+				<style>{"body { background-color: #b8bbbc }"}</style> 
 			</Helmet>
 			<div id={id} className={classes.BigContainer}>
 				<Header
