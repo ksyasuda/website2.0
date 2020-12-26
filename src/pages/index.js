@@ -6,6 +6,7 @@ import Charlie from "../components/charlie"
 import classes from "./blog.module.css"
 import { graphql, Link } from "gatsby"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
+import CircularProgress from '@material-ui/core/CircularProgress';
 import GitHubIcon from "@material-ui/icons/GitHub"
 import Github from "../components/github"
 class IndexPage extends Component {
@@ -104,7 +105,7 @@ class IndexPage extends Component {
 	}
 
 	render() {
-		return (
+		return this.state.posts.length >= 2 ? (
 			<div className={classes.BigContainer}>
 				<Layout backgroundImg={true}>
 					{/* <div className={classes.HomeContainer}> */}
@@ -154,7 +155,7 @@ class IndexPage extends Component {
 					{/* </div> */}
 				</Layout>
 			</div>
-		)
+		) : <CircularProgress />
 	}
 }
 
