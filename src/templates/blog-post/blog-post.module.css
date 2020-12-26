@@ -87,13 +87,19 @@
 .blogPost {
 	font-family: "Open Sans";
 	/* font-size: 18px; */
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .title {
 	font-family: "Open Sans";
 	font-size: 50px;
 	text-align: center;
+}
+
+.TimeToRead {
+	text-align: center;
+	color: #282c34;
+	font-size: 15px;
 }
 
 @media (max-width: 500px) {

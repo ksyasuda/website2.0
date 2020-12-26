@@ -34,6 +34,7 @@ const blogPost = ({ data }) => {
 					</Link>
 				</div>
 				<h1 className={classes.title}>{post.frontmatter.title}</h1>
+				<p className={classes.TimeToRead}>{post.timeToRead} min read</p>
 				<div
 					className={classes.blogPost}
 					dangerouslySetInnerHTML={{ __html: post.html }}
