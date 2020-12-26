@@ -160,7 +160,9 @@ class IndexPage extends Component {
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(sort: { fields: [frontmatter___id], order: DESC } limit: 2) {
+		allMarkdownRemark(sort: { fields: [frontmatter___id], order: DESC } limit: 2, filter: {
+			frontmatter: {hidden: {ne: "yes"}}
+		}) {
 			totalCount
 			edges {
 				node {
