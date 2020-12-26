@@ -41,11 +41,23 @@ const blog = ({ data }) => {
 	const getRandomNum = () => {
 		return Math.floor(Math.random() * Math.floor(vcolors.length))
 	}
+
+	const shuffleArray = (arr) => {
+		for(let i = arr.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * i)
+			const temp = arr[i]
+			arr[i] = arr[j]
+			arr[j] = temp
+		}
+	}
 	let lastColor = null
 	let numPosts = data.allMarkdownRemark.edges.length
 	let height = 50 * numPosts + 5 * numPosts
 	height = height + "vh"
+	// get random starting point in array
 	let count = getRandomNum() 
+	// shuffle array of colors
+	shuffleArray(vcolors)
 	return (
 		<Layout height={height}>
 			<SEO
@@ -59,8 +71,6 @@ const blog = ({ data }) => {
 				</h4>
 				<div className={classes.BlogPostsContainer}>
 					{data.allMarkdownRemark.edges.map(({ node }) => {
-						// const random_num = getRandomNum() 
-						// const color = vcolors[random_num]
 						const color = vcolors[count++ % vcolors.length]
 						return (
 							<div className={classes.PostsCont} key={node.id}>
