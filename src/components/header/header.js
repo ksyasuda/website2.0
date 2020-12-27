@@ -11,13 +11,6 @@ class Header extends Component {
 	state = {
 		show: false,
 		loading: false,
-		mobile: false,
-	}
-
-	componentDidMount = () => {
-		if (typeof window !== "undefined" && window.screen.width <= 500) {
-			this.setState({ mobile: true })
-		}
 	}
 
 	onToggleMenuHandler = event => {
@@ -42,11 +35,7 @@ class Header extends Component {
 				>
 					<div
 						style={{
-							//   margin: `0 auto`,
 							float: "left",
-							// maxWidth: 960,
-							// padding: `1.45rem 1.0875rem`,
-							// textAlign: "center",
 						}}
 					>
 						<h1 className={classes.SiteTitle}>
@@ -61,18 +50,6 @@ class Header extends Component {
 								{siteTitle}
 							</Link>
 						</h1>
-						{/* <br /> */}
-						{/* <hr
-        style={{
-          height: '5px',
-          width: '120%',
-          textAlign: 'center',
-          position: 'relative',
-          left: '-25px',
-          backgroundColor: 'green',
-        }}
-      /> */}
-						{/* <NavBar /> */}
 					</div>
 					<div
 						style={{

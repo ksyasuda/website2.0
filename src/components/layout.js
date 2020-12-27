@@ -61,7 +61,6 @@ const Layout = ({
 					}}
 				>
 					<main>
-						{/* <NavBar /> */}
 						{children}
 					</main>
 					<footer
