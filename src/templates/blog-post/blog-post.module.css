@@ -104,8 +104,13 @@
 
 @media (max-width: 500px) {
 	.blog_container {
-		width: 98%;
+		width: 100%;
 		left: 1%;
+	}
+	.blogPost {
+		width: 115%;
+		position: relative;
+		right: 10px;
 	}
 	.toTheTop {
 		opacity: 0.69;
